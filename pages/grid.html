@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NBC AGM 2026 — Take Your Place on the Grid</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/grid.css" />
+  </head>
+
+  <body>
+    <main class="site" id="site">
+      <!-- ========================================
+           HERO
+      ========================================= -->
+
+      <section class="hero">
+        <nav class="nav">
+          <div class="brand">
+            <a href="../index.html">
+              <img src="../assets/cropped-nbc-logo-new.png" alt="NBC" />
+            </a>
+          </div>
+
+          <span class="nav-tag"> YOU ARE INVITED <i></i> </span>
+        </nav>
+
+        <div class="hero-copy">
+          <p class="eyebrow">THE LIGHTS ARE ABOUT TO GO OUT.</p>
+
+          <h1>
+            <span>TAKE YOUR PLACE</span>
+            <span>ON THE <em>GRID</em></span>
+          </h1>
+
+          <p class="subline">
+            Different teams.
+            <strong>One shared future.</strong>
+          </p>
+        </div>
+
+        <!-- ========================================
+     CAR SHOWCASE
+======================================== -->
+
+        <section class="car-showcase" aria-label="Interactive racing car carousel">
+          <!-- Background red glow -->
+          <div class="showcase-glow"></div>
+
+          <!-- Racing road/grid underneath the cars -->
+          <div class="road"></div>
+
+          <!-- Speed lines -->
+          <div class="speed-line speed-line-a"></div>
+          <div class="speed-line speed-line-b"></div>
+
+          <!-- ======================================
+       CAR DISPLAY
+  ======================================= -->
+
+          <div class="car-info">
+            <span class="car-kicker"> SELECTED MACHINE </span>
+            <h2 id="carName"></h2>
+
+            <p id="carDescription"></p>
+          </div>
+
+          <div class="car-container">
+            <!-- Previous car -->
+            <button type="button" class="carousel-arrow carousel-prev" id="prevCar" aria-label="Previous car">‹</button>
+
+            <!--
+      JavaScript injects all the cars here.
+
+      The HTML starts empty:
+
+          <div id="cars"></div>
+
+      JavaScript then creates:
+
+          <button class="car-card">
+              <img ...>
+          </button>
+
+      for every car.
+    -->
+
+            <div class="cars" id="cars"></div>
+
+            <!-- Next car -->
+            <button type="button" class="carousel-arrow carousel-next" id="nextCar" aria-label="Next car">›</button>
+          </div>
+
+          <!-- ======================================
+       SELECTED CAR INFORMATION
+  ======================================= -->
+
+          <div class="car-info">
+            <button type="button" class="wallpaper-button" id="wallpaperButton">
+              VIEW WALLPAPER
+              <span>↗</span>
+            </button>
+          </div>
+
+          <div class="carousel-dots" id="carouselDots"></div>
+
+          <!-- Small instruction -->
+        </section>
+
+        <!-- ========================================
+             PILLARS
+        ========================================= -->
+
+        <div class="pillars">
+          <div>
+            <span>◈</span>
+            <b>EMPLOYER BODIES</b>
+          </div>
+
+          <div>
+            <span>↔</span>
+            <b>UNIONS</b>
+          </div>
+
+          <div>
+            <strong>nbc</strong>
+            <b>STRONGER TOGETHER</b>
+          </div>
+
+          <div>
+            <span>◔</span>
+            <b>DRIVING PROGRESS</b>
+          </div>
+
+          <div>
+            <span>▱</span>
+            <b>BUILDING THE FUTURE</b>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+           EVENT
+      ======================================== -->
+
+      <section class="event">
+        <div class="event-intro">
+          <p class="eyebrow">NBC ANNUAL GENERAL MEETING</p>
+
+          <div class="year">2026</div>
+
+          <h2>ACCELERATING INTO THE FUTURE</h2>
+
+          <p>
+            Join us as we reflect on our journey, celebrate our achievements and drive forward our shared vision for a stronger, more sustainable
+            industry.
+          </p>
+        </div>
+
+        <div class="details">
+          <article>
+            <span>▦</span>
+
+            <div>
+              <label>DATE</label>
+              <strong>28 MAY 2026</strong>
+              <small>THURSDAY</small>
+            </div>
+          </article>
+
+          <article>
+            <span>◷</span>
+
+            <div>
+              <label>TIME</label>
+              <strong>09:00</strong>
+              <small>REGISTRATION FROM 08:00</small>
+            </div>
+          </article>
+
+          <article>
+            <span>⌖</span>
+
+            <div>
+              <label>VENUE</label>
+              <strong>THE MASLOW HOTEL</strong>
+              <small>SANDTON, JOHANNESBURG</small>
+            </div>
+          </article>
+        </div>
+
+        <div class="rsvp">
+          <p>CONFIRM YOUR ATTENDANCE</p>
+
+          <a href="rsvp.html" id="rsvpButton" class="cta">
+            TAKE YOUR PLACE ON THE GRID
+            <span>›</span>
+          </a>
+
+          <small> KINDLY RESPOND BY 15 MAY 2026 </small>
+        </div>
+      </section>
+
+      <!-- ========================================
+           CLOSING
+      ======================================== -->
+
+      <section class="closing">
+        <p>TOGETHER WE DRIVE.</p>
+        <p><strong>TOGETHER WE WIN.</strong></p>
+        <span>#NBCAGM2026</span>
+      </section>
+
+      <!-- ========================================
+           FOOTER
+      ======================================== -->
+
+      <footer class="footer">
+        <a href="mailto:info@nbc.org.za">✉ &nbsp; info@nbc.org.za</a><i></i
+        ><a href="https://www.nbc.org.za" target="_blank" rel="noreferrer">◎ &nbsp; www.nbc.org.za</a><i></i
+        ><a href="tel:+27114071600">♧ &nbsp; 011 407 1600</a>
+      </footer>
+    </main>
+
+    <!-- ========================================
+         CAR MODAL
+    ======================================== -->
+
+    <div class="car-modal" id="carModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalCarName">
+        <button type="button" class="modal-close" id="modalClose" aria-label="Close car view">×</button>
+
+        <div class="modal-car-art" id="modalCarArt"></div>
+
+        <div class="modal-copy">
+          <span class="car-kicker"> NBC AGM 2026 // MACHINE PROFILE </span>
+
+          <h2 id="modalCarName">Car name</h2>
+
+          <p id="modalCarDescription">Hello</p>
+
+          <button type="button" class="modal-wallpaper" id="modalWallpaper">
+            DOWNLOAD WALLPAPER
+            <span>↓</span>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================
+         AUDIO
+    ======================================== -->
+
+    <audio id="mainLoading" preload="auto" src="../assets/audio/main-load.wav"></audio>
+
+    <audio id="mainMusic" preload="auto" loop src="../assets/audio/main.mp3"></audio>
+
+    <!-- ========================================
+         SCRIPTS
+    ======================================== -->
+
+    <script src="../js/carousel.js"></script>
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

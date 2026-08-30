@@ -1,0 +1,250 @@
+:root {
+  --bg: #030508;
+  --red: #ef1722;
+  --text: #f5f6f8;
+  --line: rgba(255, 255, 255, 0.13);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #020305;
+  color: #f5f6f8;
+  font-family: Inter, Arial, sans-serif;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.opening {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #020305;
+}
+.noise {
+  position: absolute;
+  inset: -50%;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: n 0.18s steps(2) infinite;
+}
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 8%, rgba(0, 0, 0, 0.52) 70%, #000);
+}
+.entry {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  transition: 0.4s;
+}
+
+.entry.hide {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.97);
+}
+
+.nbc-mark {
+  font-size: 78px;
+  font-weight: 900;
+  letter-spacing: -0.1em;
+}
+.rule {
+  height: 1px;
+  width: 42px;
+  background: #ef1722;
+  margin: 17px auto;
+}
+.entry p {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: #adb4bd;
+}
+
+.entry button {
+  border-radius: 8px;
+  margin-top: 30px;
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 15px 20px 15px 24px;
+  display: inline-flex;
+  gap: 28px;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.entry button:hover {
+  border-color: var(--red);
+  background: rgba(239, 23, 34, 0.08);
+}
+
+.entry button span {
+  margin-left: 25px;
+  font-size: 20px;
+}
+.entry small {
+  display: block;
+  margin-top: 17px;
+  font-size: 8px;
+  letter-spacing: 0.25em;
+  color: #5f6770;
+}
+
+.start-sequence {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: none;
+  z-index: 3;
+  text-align: center;
+}
+
+.start-sequence.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.start-sequence.active {
+  display: block;
+}
+.meta {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: #747c86;
+  margin-bottom: 27px;
+}
+.lights {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+}
+.lights i {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #10090a;
+  border: 1px solid #332326;
+}
+.lights i.on {
+  background: #e91420;
+  box-shadow: 0 0 28px rgba(239, 23, 34, 0.7);
+}
+.number {
+  font: 700 italic 115px/1 Rajdhani;
+  margin-top: 24px;
+}
+.status {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: #89919b;
+}
+
+.lights-out {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  font: 700 italic clamp(60px, 10vw, 150px) Rajdhani;
+}
+
+.lights-out.show {
+  display: block;
+  animation: impact 5s both;
+}
+
+.wipe {
+  position: absolute;
+  z-index: 6;
+  left: -10%;
+  top: 48%;
+  width: 120%;
+  height: 3px;
+  background: white;
+  box-shadow: 0 0 25px 10px rgba(255, 255, 255, 0.6);
+  transform: scaleX(0) skewX(-25deg);
+}
+.wipe.fire {
+  animation: wipe 0.75s cubic-bezier(0.65, 0, 0.15, 1) both;
+}
+.transitioning {
+  animation: fade 0.65s forwards;
+}
+@keyframes n {
+  50% {
+    transform: translate(3%, -2%);
+  }
+}
+
+@keyframes impact {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  20% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+
+  75% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes wipe {
+  0% {
+    transform: scaleX(0) skewX(-25deg);
+  }
+  35% {
+    transform: scaleX(1) skewX(-25deg);
+  }
+  100% {
+    transform: scaleX(1.8) skewX(-25deg);
+    opacity: 0;
+  }
+}
+@keyframes fade {
+  to {
+    opacity: 0;
+  }
+}
+@media (max-width: 520px) {
+  .nbc-mark {
+    font-size: 62px;
+  }
+  .number {
+    font-size: 88px;
+  }
+  .lights {
+    gap: 8px;
+  }
+  .lights i {
+    width: 24px;
+    height: 24px;
+  }
+}

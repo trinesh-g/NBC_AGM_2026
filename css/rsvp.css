@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #030508;
+  color: #f5f6f8;
+  font-family: Inter, Arial, sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.rsvp-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 42%, #1e2933, #070a0e 58%, #030508);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.brand img {
+  width: 450px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 28px 40px;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+}
+.brand {
+  font-size: 43px;
+  font-weight: 900;
+  letter-spacing: -0.1em;
+}
+.panel {
+  width: min(720px, 92vw);
+  margin: 3vh auto 0;
+  padding: 42px;
+  background: linear-gradient(145deg, #121a22, #05070b);
+  border: 1px solid #ffffff24;
+  box-shadow: 0 30px 100px #000;
+}
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: #ef1722;
+}
+.panel h1 {
+  font: 700 italic 54px Rajdhani;
+  margin: 8px 0;
+}
+.panel > p {
+  font-size: 12px;
+  color: #aeb5be;
+}
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 25px;
+}
+.panel label {
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  color: #aeb5be;
+}
+.panel input,
+.panel select {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+  padding: 13px;
+  background: #080b0f;
+  color: #fff;
+  border: 1px solid #ffffff24;
+  outline: 0;
+}
+.panel select {
+  margin-bottom: 18px;
+}
+.panel input:focus,
+.panel select:focus {
+  border-color: #ef1722;
+}
+.panel form button {
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  background: #ef1722;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+.panel form button span {
+  float: right;
+  font-size: 19px;
+}
+.panel form > small {
+  display: block;
+  color: #606a75;
+  font-size: 8px;
+  margin-top: 12px;
+}
+.success {
+  display: none;
+  text-align: center;
+  padding: 40px;
+}
+.success.show {
+  display: block;
+}
+.success b {
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid #ef1722;
+  border-radius: 50%;
+  color: #ef1722;
+  font-size: 25px;
+}
+.success h2 {
+  font: 700 italic 36px Rajdhani;
+  margin: 15px 0 4px;
+}
+.success p {
+  font-size: 11px;
+  color: #9da5ae;
+}
+@media (max-width: 650px) {
+  nav {
+    padding: 20px 22px;
+  }
+  .panel {
+    padding: 28px 22px;
+    margin-top: 1vh;
+  }
+  .fields {
+    grid-template-columns: 1fr;
+  }
+  .panel h1 {
+    font-size: 42px;
+  }
+}

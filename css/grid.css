@@ -1,0 +1,1384 @@
+/* =========================================================
+   NBC AGM 2026 — GRID PAGE
+   ========================================================= */
+
+:root {
+  --bg: #030508;
+  --red: #ef1722;
+  --text: #f5f6f8;
+  --line: rgba(255, 255, 255, 0.13);
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+button,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =========================================================
+   MAIN SITE
+   ========================================================= */
+
+.site {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.25s ease;
+}
+
+.site.is-live {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: radial-gradient(ellipse at 50% 42%, #394452 0%, #111820 24%, #05070b 65%);
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.76), transparent 43%, #030508 100%);
+
+  z-index: 5;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav {
+  position: relative;
+  z-index: 40;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: min(calc(100% - 70px), 1440px);
+
+  margin: 0 auto;
+
+  padding: 32px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.brand img {
+  width: 450px;
+}
+
+.brand-mark {
+  font-size: 43px;
+  font-weight: 900;
+
+  letter-spacing: -0.1em;
+}
+
+.brand-copy {
+  font-size: 9px;
+  line-height: 1.25;
+}
+
+.brand-copy small {
+  font-size: 7px;
+  opacity: 0.7;
+}
+
+.nav-tag {
+  font-size: 10px;
+
+  letter-spacing: 0.22em;
+}
+
+.nav-tag i {
+  display: inline-block;
+
+  width: 25px;
+  height: 1px;
+
+  margin-left: 10px;
+
+  background: var(--red);
+
+  vertical-align: middle;
+}
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.hero-copy {
+  position: relative;
+  z-index: 35;
+
+  text-align: center;
+
+  padding-top: 15px;
+}
+
+.eyebrow {
+  color: var(--red);
+
+  font-size: 17px;
+  font-weight: 700;
+  font-style: italic;
+
+  letter-spacing: 0.04em;
+}
+
+.hero h1 {
+  margin: 15px 0;
+
+  font:
+    700 italic clamp(62px, 7vw, 108px) / 0.78 Rajdhani,
+    sans-serif;
+}
+
+.hero h1 span {
+  display: block;
+}
+
+.hero h1 em {
+  color: var(--red);
+}
+
+.subline {
+  font-size: 19px;
+}
+
+.subline strong {
+  color: var(--red);
+  font-weight: 500;
+}
+
+/* =========================================================
+   CAR SHOWCASE
+   ========================================================= */
+
+.car-showcase {
+  border-top: 1px solid var(--line);
+  position: relative;
+  z-index: 10;
+
+  flex: 1;
+
+  min-height: 520px;
+
+  width: min(1320px, 100%);
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  perspective: 1000px;
+}
+
+/* =========================================================
+   RED GLOW
+   ========================================================= */
+
+.showcase-glow {
+  position: absolute;
+
+  left: 25%;
+  right: 25%;
+  top: 35%;
+
+  height: 130px;
+
+  background: radial-gradient(ellipse, rgba(239, 23, 34, 0.14), transparent 68%);
+
+  filter: blur(20px);
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+/* =========================================================
+   ROAD
+   ========================================================= */
+
+.road {
+  position: absolute;
+
+  left: -12%;
+  right: -12%;
+
+  top: 30%;
+  bottom: -25%;
+
+  transform: rotateX(64deg);
+
+  clip-path: polygon(29% 0, 71% 0, 100% 100%, 0 100%);
+
+  background:
+    repeating-linear-gradient(90deg, transparent 0 82px, rgba(255, 255, 255, 0.08) 83px 85px, transparent 86px 165px),
+    linear-gradient(#151b22, #020304 74%);
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CAR CONTAINER
+   ========================================================= */
+
+.car-container {
+  position: relative;
+
+  z-index: 15;
+
+  width: 100%;
+
+  height: 350px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   SPEED LINES
+   ========================================================= */
+
+.speed-line {
+  position: absolute;
+
+  height: 2px;
+
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+
+  filter: blur(1px);
+
+  pointer-events: none;
+
+  z-index: 4;
+}
+
+.speed-line-a {
+  width: 40%;
+
+  left: -4%;
+  top: 54%;
+
+  transform: rotate(8deg);
+}
+
+.speed-line-b {
+  width: 38%;
+
+  right: -4%;
+  top: 60%;
+
+  transform: rotate(-8deg);
+}
+
+/* =========================================================
+   CAR HOLDER
+   ========================================================= */
+
+.cars {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10;
+}
+
+/* =========================================================
+   INDIVIDUAL CAR
+   ========================================================= */
+
+.car-card {
+  position: absolute;
+
+  left: 50%;
+  top: 60%;
+
+  width: 260px;
+  height: 105px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  transform: translate(-50%, -50%);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.5s,
+    filter 0.5s;
+
+  z-index: 3;
+}
+
+/* =========================================================
+   CAR IMAGE
+   ========================================================= */
+
+.car-card img {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 490px;
+  height: 210px;
+
+  transform: translate(-50%, -50%);
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 25px 24px rgba(0, 0, 0, 0.65));
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   ACTIVE CAR
+   ========================================================= */
+
+.car-card.active {
+  transform: translate(-50%, -50%) translateY(-35px) scale(1.3);
+
+  opacity: 0.8;
+
+  filter: brightness(0.8);
+
+  z-index: 10;
+}
+
+/* =========================================================
+   CAR TO THE LEFT
+   ========================================================= */
+
+.car-card.left {
+  transform: translate(-185%, -50%) scale(0.78);
+
+  opacity: 0.55;
+
+  filter: brightness(0.3);
+
+  z-index: 4;
+}
+
+/* =========================================================
+   CAR TO THE RIGHT
+   ========================================================= */
+
+.car-card.right {
+  transform: translate(85%, -50%) scale(0.78);
+
+  opacity: 0.55;
+
+  filter: brightness(0.3);
+
+  z-index: 4;
+}
+
+/* =========================================================
+   FAR LEFT
+   ========================================================= */
+
+.car-card.far-left {
+  transform: translate(-285%, -50%) scale(0.58);
+
+  opacity: 0.2;
+
+  filter: brightness(0.2);
+
+  z-index: 2;
+}
+
+/* =========================================================
+   FAR RIGHT
+   ========================================================= */
+
+.car-card.far-right {
+  transform: translate(185%, -50%) scale(0.58);
+
+  opacity: 0.2;
+
+  filter: brightness(0.2);
+
+  z-index: 2;
+}
+
+/* =========================================================
+   HIDDEN CAR
+   ========================================================= */
+
+.car-card.hidden {
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CAROUSEL ARROWS
+   ========================================================= */
+
+.carousel-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 25;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  font-size: 34px;
+  font-weight: 300;
+
+  line-height: 1;
+
+  transform: translateY(-50%);
+
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.carousel-arrow:hover {
+  border-color: var(--red);
+
+  background: rgba(239, 23, 34, 0.1);
+}
+
+.carousel-prev {
+  left: 7%;
+}
+
+.carousel-next {
+  right: 7%;
+}
+
+/* =========================================================
+   CAR INFORMATION
+   ========================================================= */
+
+.car-info {
+  position: relative;
+
+  z-index: 20;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  text-align: center;
+}
+
+.car-kicker {
+  margin-top: 24px;
+  font-size: 9px;
+
+  letter-spacing: 0.22em;
+
+  color: #9aa2ac;
+}
+
+.car-info h2 {
+  margin: 4px 0;
+
+  font:
+    700 italic 31px Rajdhani,
+    sans-serif;
+}
+
+.car-info p {
+  margin: 0 0 12px;
+
+  color: #b8bec6;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   WALLPAPER BUTTON
+   ========================================================= */
+
+.wallpaper-button {
+  border: 0;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font-size: 10px;
+
+  letter-spacing: 0.14em;
+
+  cursor: pointer;
+}
+
+.wallpaper-button:hover {
+  color: var(--red);
+}
+
+/* =========================================================
+   DOTS
+   ========================================================= */
+
+.carousel-dots {
+  position: relative;
+
+  z-index: 20;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+.carousel-dots button {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #626871;
+
+  cursor: pointer;
+}
+
+.carousel-dots button.active {
+  background: var(--red);
+
+  box-shadow: 0 0 10px rgba(239, 23, 34, 0.7);
+}
+
+/* =========================================================
+   CAROUSEL HINT
+   ========================================================= */
+
+.carousel-hint {
+  position: relative;
+
+  z-index: 20;
+
+  margin: 10px 0 0;
+
+  text-align: center;
+
+  color: #69717b;
+
+  font-size: 7px;
+
+  letter-spacing: 0.24em;
+}
+
+/* =========================================================
+   PILLARS
+   ========================================================= */
+
+.pillars {
+  position: relative;
+
+  z-index: 35;
+
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  width: min(1100px, 92%);
+
+  margin: auto;
+
+  border-top: 1px solid var(--line);
+
+  padding-top: 16px;
+}
+
+.pillars > div {
+  min-height: 65px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  text-align: center;
+
+  border-right: 1px solid var(--line);
+}
+
+.pillars > div:last-child {
+  border-right: 0;
+}
+
+.pillars span,
+.pillars strong {
+  font-size: 25px;
+}
+
+.pillars b {
+  font-size: 8px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   EVENT SECTION
+   ========================================================= */
+
+.event {
+  position: relative;
+
+  text-align: center;
+
+  padding: 70px 25px;
+
+  background: #070a0f;
+
+  border-top: 1px solid var(--line);
+}
+
+.event-intro {
+  max-width: 700px;
+
+  margin: auto;
+}
+
+.year {
+  margin: 8px;
+
+  font:
+    700 italic 110px Rajdhani,
+    sans-serif;
+
+  line-height: 0.85;
+}
+
+.event h2 {
+  font:
+    700 italic 28px Rajdhani,
+    sans-serif;
+}
+
+.event-intro > p:last-child {
+  color: #d9dde2;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   EVENT DETAILS
+   ========================================================= */
+
+.details {
+  width: min(980px, 100%);
+
+  margin: 42px auto 24px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border-block: 1px solid var(--line);
+}
+
+.details article {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  padding: 20px;
+
+  border-right: 1px solid var(--line);
+
+  text-align: left;
+}
+
+.details article:last-child {
+  border-right: 0;
+}
+
+.details article > span {
+  font-size: 35px;
+}
+
+.details label {
+  display: block;
+
+  color: var(--red);
+
+  font-size: 11px;
+}
+
+.details strong,
+.details small {
+  display: block;
+}
+
+.details strong {
+  margin-top: 4px;
+
+  font-size: 13px;
+}
+
+.details small {
+  margin-top: 3px;
+
+  color: #9ea6b0;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   RSVP
+   ========================================================= */
+
+.rsvp > p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cta {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 30px;
+
+  width: min(480px, 100%);
+
+  margin: auto;
+
+  padding: 18px;
+
+  border-radius: 16px;
+
+  background: linear-gradient(90deg, #d40713, #ef1722);
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cta span {
+  font-size: 28px;
+}
+
+.rsvp > small {
+  display: block;
+
+  margin-top: 15px;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   CLOSING
+   ========================================================= */
+
+.closing {
+  height: 220px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(#090c11, #030508);
+}
+
+.closing p {
+  margin: 3px;
+
+  font-size: 20px;
+
+  letter-spacing: 0.32em;
+}
+
+.closing strong {
+  color: var(--red);
+
+  font-weight: 500;
+}
+
+.closing span {
+  margin-top: 22px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.2em;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 18px 20px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: #e7e9ec;
+}
+
+.footer a:hover {
+  color: var(--red);
+}
+
+.footer i {
+  width: 1px;
+  height: 20px;
+  background: var(--line);
+}
+
+/* =========================================================
+   CAR MODAL
+   ========================================================= */
+
+.car-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 200;
+
+  display: none;
+
+  place-items: center;
+
+  padding: 30px;
+}
+
+.car-modal.open {
+  display: grid;
+}
+
+/* Modal background */
+
+.modal-backdrop {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.82);
+
+  backdrop-filter: blur(12px);
+}
+
+/* Modal panel */
+
+.modal-panel {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1000px, 94vw);
+
+  min-height: 560px;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns: 1.25fr 0.75fr;
+
+  border: 1px solid var(--line);
+
+  background: linear-gradient(145deg, #111820, #05070b);
+
+  box-shadow: 0 30px 100px #000;
+}
+
+/* Close button */
+
+.modal-close {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 14px;
+  right: 18px;
+
+  border: 0;
+
+  background: transparent;
+
+  font-size: 32px;
+  font-weight: 200;
+}
+
+/* Modal car area */
+
+.modal-car-art {
+  position: relative;
+
+  min-height: 500px;
+
+  display: grid;
+
+  place-items: center;
+
+  overflow: hidden;
+
+  background: radial-gradient(ellipse at 50% 50%, #35414c 0, #10161d 45%, #040608 80%);
+}
+
+/* Red/accent line */
+
+.modal-car-art::before {
+  content: "";
+
+  position: absolute;
+
+  left: 12%;
+  right: 12%;
+
+  bottom: 23%;
+
+  height: 2px;
+
+  background: var(--modal-accent, var(--red));
+
+  box-shadow: 0 0 30px var(--modal-accent, var(--red));
+}
+
+/* Injected car image */
+
+.modal-car-art img {
+  position: relative;
+
+  z-index: 2;
+
+  width: 105%;
+
+  max-width: none;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 35px 35px #000);
+}
+
+/* Modal copy */
+
+.modal-copy {
+  padding: 80px 45px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.modal-copy h2 {
+  margin: 8px 0;
+
+  font:
+    700 italic 48px Rajdhani,
+    sans-serif;
+}
+
+.modal-copy p {
+  color: #aeb5be;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* Modal download button */
+
+.modal-wallpaper {
+  margin-top: 25px;
+
+  padding: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  background: transparent;
+
+  font-size: 10px;
+
+  letter-spacing: 0.13em;
+}
+
+.modal-wallpaper:hover {
+  border-color: var(--red);
+}
+
+.event {
+  position: relative;
+  text-align: center;
+  padding: 68px 30px 70px;
+  background: linear-gradient(180deg, #080b10 0%, #06090e 100%);
+  border-top: 1px solid var(--line);
+}
+.event:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  background:
+    linear-gradient(145deg, transparent 0 57%, rgba(239, 23, 34, 0.16) 58%, transparent 61%),
+    repeating-linear-gradient(135deg, transparent 0 32px, rgba(255, 255, 255, 0.015) 33px 34px);
+}
+.event__intro,
+.details,
+.rsvp {
+  position: relative;
+  z-index: 1;
+}
+.event__intro .eyebrow {
+  font-size: 18px;
+}
+.closing {
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  background: linear-gradient(180deg, #090b0f, #050608), repeating-linear-gradient(175deg, transparent 0 20px, rgba(239, 23, 34, 0.1) 21px 23px);
+}
+.closing__lines {
+  position: absolute;
+  inset: 40% -10%;
+  background: repeating-linear-gradient(0deg, transparent 0 15px, rgba(239, 23, 34, 0.22) 16px 18px, transparent 19px 30px);
+  transform: perspective(200px) rotateX(45deg);
+  filter: blur(2px);
+}
+.closing p {
+  position: relative;
+  margin: 3px;
+  font-size: 22px;
+  letter-spacing: 0.38em;
+}
+.closing p strong {
+  color: var(--red);
+  font-weight: 500;
+}
+.closing span {
+  position: relative;
+  margin-top: 28px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .hero {
+    min-height: 850px;
+  }
+
+  .nav {
+    width: calc(100% - 34px);
+
+    padding: 22px 0;
+  }
+
+  .brand-copy {
+    display: none;
+  }
+
+  .nav-tag {
+    font-size: 8px;
+  }
+
+  .car-showcase {
+    min-height: 480px;
+  }
+
+  .car-container {
+    height: 330px;
+  }
+
+  .car-card {
+    width: 210px;
+  }
+
+  .car-card img {
+    width: 420px;
+    height: 180px;
+  }
+
+  .car-card.pos-left {
+    transform: translate(-150%, -50%) scale(0.72);
+  }
+
+  .car-card.pos-right {
+    transform: translate(50%, -50%) scale(0.72);
+  }
+
+  .car-card.pos-far-left {
+    transform: translate(-240%, -50%) scale(0.52);
+  }
+
+  .car-card.pos-far-right {
+    transform: translate(140%, -50%) scale(0.52);
+  }
+
+  .carousel-prev {
+    left: 3%;
+  }
+
+  .carousel-next {
+    right: 3%;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+  }
+
+  .details article {
+    border-right: 0;
+
+    border-bottom: 1px solid var(--line);
+
+    justify-content: flex-start;
+
+    padding-left: 25%;
+  }
+
+  .details article:last-child {
+    border-bottom: 0;
+  }
+
+  .modal-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-car-art {
+    min-height: 340px;
+  }
+
+  .modal-copy {
+    padding: 35px;
+  }
+
+  .modal-copy h2 {
+    font-size: 38px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+  .hero {
+    min-height: 800px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+  }
+
+  .subline {
+    font-size: 15px;
+  }
+
+  .car-showcase {
+    min-height: 430px;
+  }
+
+  .car-container {
+    height: 290px;
+  }
+
+  .car-card {
+    width: 165px;
+    height: 75px;
+  }
+
+  .car-card img {
+    width: 350px;
+    height: 150px;
+  }
+
+  .car-card.is-active {
+    transform: translate(-50%, -50%) translateY(-50px) scale(1.8);
+
+    opacity: 1;
+  }
+
+  .car-card.pos-left {
+    transform: translate(-118%, -50%) scale(0.65);
+  }
+
+  .car-card.pos-right {
+    transform: translate(18%, -50%) scale(0.65);
+  }
+
+  .car-card.pos-far-left,
+  .car-card.pos-far-right {
+    opacity: 0;
+  }
+
+  .pillars {
+    width: 100%;
+  }
+
+  .pillars b {
+    font-size: 5.5px;
+  }
+
+  .pillars span,
+  .pillars strong {
+    font-size: 18px;
+  }
+
+  .details article {
+    padding-left: 15%;
+  }
+
+  .year {
+    font-size: 82px;
+  }
+
+  .event h2 {
+    font-size: 23px;
+  }
+
+  .closing p {
+    font-size: 13px;
+  }
+
+  footer {
+    flex-wrap: wrap;
+
+    padding: 15px;
+
+    gap: 10px;
+  }
+
+  footer i {
+    display: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}

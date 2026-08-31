@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NBC AGM 2026 — Grid Pass</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/grid-pass.css" />
+  </head>
+
+  <body>
+    <main class="pass-page">
+      <!-- ========================================
+           NAVIGATION
+      ========================================= -->
+
+      <nav class="pass-nav">
+        <a href="grid.html" class="back-link"> ← BACK TO GRID </a>
+
+        <button type="button" class="print-button" id="printPass">
+          PRINT / SAVE PASS
+        </button>
+      </nav>
+
+      <!-- ========================================
+           GRID PASS
+      ========================================= -->
+
+      <section class="grid-pass" id="gridPass">
+        <!-- Ticket content is generated here -->
+        <div id="ticketContent"></div>
+      </section>
+
+      <!-- ========================================
+           ERROR
+      ========================================= -->
+
+      <section class="pass-error" id="passError" hidden>
+        <h1>GRID PASS UNAVAILABLE</h1>
+
+        <p>We could not find your RSVP information.</p>
+
+        <a href="rsvp.html"> RETURN TO RSVP </a>
+      </section>
+    </main>
+
+    <!-- ========================================
+         TICKET TEMPLATES
+    ========================================= -->
+
+    <script src="../js/ticket-templates.js"></script>
+
+    <!-- ========================================
+         GRID PASS LOGIC
+    ======================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="../../js/grid-pass.js"></script>
+  </body>
+</html>

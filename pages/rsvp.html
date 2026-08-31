@@ -3,50 +3,131 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+
     <title>NBC AGM 2026 — RSVP</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="../css/rsvp.css" />
   </head>
+
   <body>
     <main class="rsvp-page">
       <nav>
         <a class="brand" href="grid.html">
-          <img src="../assets/cropped-nbc-logo-new.png" alt="NBC" /> </a
-        ><a href="grid.html">← BACK TO GRID</a>
+          <img src="../assets/cropped-nbc-logo-new.png" alt="NBC" />
+        </a>
+
+        <a class="back-link" href="grid.html">← BACK TO GRID</a>
       </nav>
 
       <section class="panel">
-        <span class="eyebrow">NBC AGM 2026 // GRID ENTRY</span>
-        <h1>TAKE YOUR PLACE.</h1>
-        <p>Confirm your attendance and reserve your place on the grid.</p>
-        <form id="rsvpForm">
-          <div class="fields">
-            <label>FULL NAME<input name="name" required autocomplete="name" placeholder="Your full name" /></label>
-            <label>ORGANISATION<input name="organisation" required autocomplete="organization" placeholder="Organisation" /></label>
-            <label>EMAIL ADDRESS<input type="email" name="email" required autocomplete="email" placeholder="you@example.com" /></label>
-            <label>CONTACT NUMBER<input type="tel" name="phone" autocomplete="tel" placeholder="+27" /></label>
-          </div>
-          <label
-            >ATTENDANCE<select name="attendance" required>
-              <option value="">Select</option>
-              <option>Attending</option>
-              <option>Unable to attend</option>
-            </select></label
-          >
-          <button type="submit">CONFIRM ATTENDANCE <span>→</span></button><small>Ready to connect to the final RSVP service.</small>
-        </form>
-        <div class="success" id="success">
+        <div id="formContent">
+          <span class="eyebrow">NBC AGM 2026 // GRID ENTRY</span>
+
+          <h1>TAKE YOUR PLACE.</h1>
+
+          <p class="intro">
+            Confirm your attendance and reserve your place on the grid.
+          </p>
+
+          <form id="rsvpForm">
+            <div class="fields">
+              <label>
+                FULL NAME
+                <input
+                  name="name"
+                  required
+                  autocomplete="name"
+                  placeholder="Your full name"
+                />
+              </label>
+
+              <label>
+                ORGANISATION
+                <select
+                  name="organisation"
+                  required
+                  autocomplete="organization"
+                  placeholder="Organisation"
+                >
+                  <option value="">Select your organisation</option>
+                  <option value="ATASA">ATASA</option>
+                  <option value="SACMA">SACMA</option>
+                  <option value="EPCMA">EPCMA</option>
+                  <option value="SAAA">SAAA</option>
+                  <option value="SACTWU">SACTWU</option>
+                  <option value="NBC">NBC</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+
+              <label>
+                EMAIL ADDRESS
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                />
+              </label>
+
+              <label>
+                CONTACT NUMBER
+                <input
+                  type="tel"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="+27"
+                />
+              </label>
+            </div>
+
+            <label>
+              ATTENDANCE
+              <select name="attendance" required>
+                <option value="">Select</option>
+                <option value="Attending">Attending</option>
+                <option value="Unable to attend">Unable to attend</option>
+              </select>
+            </label>
+
+            <button type="submit" class="submit-button">
+              CONFIRM ATTENDANCE
+              <span>→</span>
+            </button>
+
+            <small class="form-note">
+              Your Grid Pass will be generated after confirmation.
+            </small>
+          </form>
+        </div>
+
+        <div class="success" id="success" aria-live="polite">
           <b>✓</b>
+
           <h2>YOU'RE ON THE GRID.</h2>
-          <p>Your response has been prepared.</p>
+
+          <p>Your Grid Pass is ready.</p>
+
+          <button type="button" id="viewGridPass">
+            VIEW GRID PASS
+            <span>→</span>
+          </button>
+
+          <button type="button" id="backToForm" class="secondary-button">
+            EDIT RESPONSE
+          </button>
         </div>
       </section>
     </main>
+
     <script src="../js/rsvp.js"></script>
   </body>
 </html>

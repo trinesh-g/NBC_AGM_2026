@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NBC AGM 2026 — SACTWU Grid Pass</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Shared ticket structure -->
+    <link rel="stylesheet" href="../../css/grid-pass.css" />
+
+    <!-- SACTWU ticket styling -->
+    <link rel="stylesheet" href="../../css/sactwu-ticket.css" />
+  </head>
+
+  <body class="ticket-page ticket-page-sactwu">
+    <main class="pass-page">
+      <!-- ========================================
+           NAVIGATION
+      ======================================== -->
+
+      <nav class="pass-nav">
+        <a href="../grid.html" class="back-link"> ← BACK TO GRID </a>
+
+        <button type="button" class="print-button" onclick="window.print()">
+          PRINT / SAVE PASS
+        </button>
+      </nav>
+
+      <!-- ========================================
+           SACTWU GRID PASS
+      ======================================== -->
+
+      <section class="ticket ticket-sactwu" id="gridPass">
+        <div class="ticket-top-line"></div>
+
+        <!-- ========================================
+             HEADER
+        ======================================== -->
+
+        <header class="ticket-header">
+          <div class="ticket-branding">
+            <span class="eyebrow"> NBC ANNUAL GENERAL MEETING </span>
+
+            <div class="ticket-year">2026</div>
+          </div>
+
+          <div class="ticket-class">
+            <span> GRID PASS </span>
+
+            <small> SACTWU // OFFICIAL ENTRY </small>
+          </div>
+        </header>
+
+        <div class="ticket-divider"></div>
+
+        <!-- ========================================
+             ATTENDEE
+        ======================================== -->
+
+        <section class="ticket-main">
+          <div class="attendee">
+            <span class="field-label"> DRIVER </span>
+
+            <h1 id="attendeeName">JOHN SMITH</h1>
+
+            <span class="field-label"> ORGANISATION </span>
+
+            <h2 id="organisation">SACTWU</h2>
+
+            <span class="attendance" id="attendance"> ATTENDING </span>
+          </div>
+
+          <!-- ========================================
+               DRIVER PROFILE
+          ======================================== -->
+
+          <div class="profile">
+            <div class="profile-image">
+              <div class="profile-ring"></div>
+
+              <div class="helmet"></div>
+
+              <div class="visor"></div>
+            </div>
+
+            <span> DRIVER PROFILE </span>
+          </div>
+        </section>
+
+        <!-- ========================================
+             SACTWU RACING MACHINE
+        ======================================== -->
+
+        <section class="car-zone">
+          <div class="car-glow"></div>
+
+          <div class="speed-line speed-line-one"></div>
+
+          <div class="speed-line speed-line-two"></div>
+
+          <div class="car">
+            <div class="wheel wheel-left"></div>
+
+            <div class="wheel wheel-right"></div>
+
+            <div class="front-wing"></div>
+
+            <div class="nose"></div>
+
+            <div class="cockpit"></div>
+
+            <div class="body"></div>
+
+            <div class="sidepod sidepod-left"></div>
+
+            <div class="sidepod sidepod-right"></div>
+
+            <div class="rear-wing"></div>
+          </div>
+
+          <div class="car-label">SACTWU // RACING MACHINE</div>
+        </section>
+
+        <div class="ticket-divider"></div>
+
+        <!-- ========================================
+             EVENT DETAILS
+        ======================================== -->
+
+        <section class="event-details">
+          <div class="event-detail">
+            <span class="field-label"> DATE </span>
+
+            <strong> 28 OCTOBER 2026 </strong>
+          </div>
+
+          <div class="event-detail">
+            <span class="field-label"> TIME </span>
+
+            <strong> 10:00 - 11:30 </strong>
+          </div>
+
+          <div class="event-detail">
+            <span class="field-label"> VENUE </span>
+
+            <strong> THE MASLOW · SANDTON </strong>
+          </div>
+
+          <div class="event-detail">
+            <span class="field-label"> PASS ID </span>
+
+            <strong class="pass-id" id="passId"> NBC-2026-4821 </strong>
+          </div>
+        </section>
+
+        <!-- ========================================
+             FOOTER
+        ======================================== -->
+
+        <footer class="ticket-footer">
+          <span> #NBCAGM2026 // ACCELERATING INTO THE FUTURE </span>
+
+          <strong> SACTWU // GRID ENTRY </strong>
+        </footer>
+
+        <div class="ticket-bottom-line"></div>
+      </section>
+    </main>
+
+    <!-- Shared ticket population logic -->
+    <script src="../../js/grid-pass.js"></script>
+  </body>
+</html>

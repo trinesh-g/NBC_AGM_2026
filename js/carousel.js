@@ -1,20 +1,3 @@
-// =====================================================
-// CAR DATA
-// =====================================================
-
-// This array stores all of the cars in our carousel.
-//
-// Each object represents ONE car.
-//
-// name       = Name displayed to the user
-// accent     = Accent colour for that car
-// label      = Short identifier used for the wallpaper filename
-// file       = Main car image
-// wallpaper  = Wallpaper image
-//
-// You can add more information to each car later,
-// such as description, team, driver, etc.
-
 const cars = [
   {
     name: "SIGMA // 01",
@@ -35,7 +18,7 @@ const cars = [
   {
     name: "ENVI // 03",
     accent: "#ef1722",
-    label: "NBC",
+    label: "03",
     file: "../assets/cars/nbc.png",
     wallpaper: "../assets/wallpapers/nbc-03.svg",
   },
@@ -47,13 +30,19 @@ const cars = [
     file: "../assets/cars/atasa.png",
     wallpaper: "../assets/wallpapers/pulse-04.svg",
   },
-
   {
     name: "SAERA // 05",
     accent: "#ffd000",
     label: "05",
     file: "../assets/cars/saa.png",
     wallpaper: "../assets/wallpapers/torque-05.svg",
+  },
+  {
+    name: "EPCARA // 06",
+    accent: "#00a651",
+    label: "06",
+    file: "../assets/cars/epcma.png",
+    wallpaper: "../assets/wallpapers/epcma-06.svg",
   },
 ];
 
@@ -177,23 +166,17 @@ cars.forEach(function (car, index) {
 // Car 4 = far right
 
 function getRelativePosition(index) {
-  // Work out the difference between this car
-  // and the currently selected car.
-
   let distance = index - selected;
 
-  // Because this is a circular carousel,
-  // we need to wrap the positions around.
+  const carCount = cars.length;
 
-  if (distance > 2) {
-    distance = distance - 5;
+  if (distance > Math.floor(carCount / 2)) {
+    distance = distance - carCount;
   }
 
-  if (distance < -2) {
-    distance = distance + 5;
+  if (distance < -Math.floor(carCount / 2)) {
+    distance = distance + carCount;
   }
-
-  // Return the final position.
 
   return distance;
 }
@@ -296,7 +279,8 @@ function renderCarousel() {
 
   // Put the selected car's description into the description.
 
-  document.getElementById("carDescription").textContent = selectedCar.description;
+  document.getElementById("carDescription").textContent =
+    selectedCar.description;
 }
 
 // =====================================================
@@ -316,7 +300,7 @@ function selectCar(index, openModal) {
   // If we go before 0, it wraps to the last car.
   // If we go beyond the last car, it wraps to the first.
 
-  selected = (index + 5) % 5;
+  selected = (index + cars.length) % cars.length;
 
   // Update the visual carousel.
 
@@ -356,11 +340,13 @@ function openCarModal() {
 
   // Put the description into the modal.
 
-  document.getElementById("modalCarDescription").textContent = selectedCar.description;
+  document.getElementById("modalCarDescription").textContent =
+    selectedCar.description;
 
   // Store the wallpaper filename on the download button.
 
-  document.getElementById("modalWallpaper").dataset.file = selectedCar.wallpaper;
+  document.getElementById("modalWallpaper").dataset.file =
+    selectedCar.wallpaper;
 
   // Store the short car name for the download filename.
 
@@ -450,7 +436,10 @@ document.getElementById("modalWallpaper").onclick = function () {
 
   // Create the filename for the downloaded wallpaper.
 
-  downloadLink.download = "NBC-AGM-2026-" + document.getElementById("modalWallpaper").dataset.name + ".svg";
+  downloadLink.download =
+    "NBC-AGM-2026-" +
+    document.getElementById("modalWallpaper").dataset.name +
+    ".svg";
 
   // Trigger the download.
 

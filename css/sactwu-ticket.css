@@ -1,0 +1,437 @@
+/* ========================================
+   SACTWU GRID PASS
+   Yellow / Red / Black Racing Livery
+======================================== */
+
+.ticket-page-sactwu {
+  --sactwu-yellow: #ffd400;
+  --sactwu-yellow-dark: #d6a900;
+  --sactwu-red: #e30613;
+  --sactwu-red-dark: #970009;
+  --sactwu-black: #050607;
+  --sactwu-carbon: #101317;
+  --sactwu-silver: #c9cdd1;
+}
+
+/* ========================================
+   TICKET FOUNDATION
+======================================== */
+
+.ticket-sacma {
+  /* kept out intentionally */
+}
+
+/*
+   IMPORTANT:
+   Your SACTWU ticket should use:
+
+   <section class="ticket ticket-sactwu">
+
+   Therefore all styling below targets
+   .ticket-sactwu.
+*/
+
+.ticket-sactwu {
+  position: relative;
+
+  background:
+    radial-gradient(circle at 72% 35%, rgba(255, 212, 0, 0.1), transparent 28%),
+    radial-gradient(circle at 18% 75%, rgba(227, 6, 19, 0.1), transparent 30%),
+    linear-gradient(135deg, #171a1e 0%, #0b0e11 45%, #030405 100%);
+
+  border-color: rgba(255, 212, 0, 0.3);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.85),
+    0 0 90px rgba(255, 212, 0, 0.06);
+}
+
+/* ========================================
+   CARBON-FIBRE STYLE OVERLAY
+======================================== */
+
+.ticket-sactwu::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.018) 0px,
+    rgba(255, 255, 255, 0.018) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+
+  opacity: 0.35;
+}
+
+/* ========================================
+   DIAGONAL SACTWU RACING STRIPE
+======================================== */
+
+.ticket-sactwu::after {
+  content: "";
+
+  position: absolute;
+
+  top: -30%;
+  right: 8%;
+
+  width: 180px;
+  height: 170%;
+
+  transform: rotate(20deg);
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 22%,
+
+    rgba(255, 212, 0, 0.05) 22%,
+    rgba(255, 212, 0, 0.05) 39%,
+
+    rgba(227, 6, 19, 0.1) 39%,
+    rgba(227, 6, 19, 0.1) 48%,
+
+    rgba(255, 212, 0, 0.04) 48%,
+    rgba(255, 212, 0, 0.04) 60%,
+
+    transparent 60%
+  );
+}
+
+/* ========================================
+   TOP / BOTTOM RACING LINES
+======================================== */
+
+.ticket-sactwu .ticket-top-line,
+.ticket-sactwu .ticket-bottom-line {
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--sactwu-red) 18%,
+    var(--sactwu-yellow) 35%,
+    #fff 50%,
+    var(--sactwu-yellow) 65%,
+    var(--sactwu-red) 82%,
+    transparent 100%
+  );
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.ticket-sactwu .eyebrow {
+  color: var(--sactwu-yellow);
+
+  text-shadow: 0 0 15px rgba(255, 212, 0, 0.12);
+}
+
+.ticket-sactwu .ticket-year {
+  color: #fff;
+
+  text-shadow: 4px 4px 0 rgba(227, 6, 19, 0.25);
+}
+
+.ticket-sactwu .ticket-class span {
+  color: var(--sactwu-yellow);
+
+  text-shadow: 0 0 15px rgba(255, 212, 0, 0.15);
+}
+
+.ticket-sactwu .ticket-class small {
+  color: var(--sactwu-red);
+
+  font-weight: 800;
+}
+
+/* ========================================
+   DIVIDERS
+======================================== */
+
+.ticket-sactwu .ticket-divider {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 212, 0, 0.45),
+    rgba(227, 6, 19, 0.7),
+    rgba(255, 212, 0, 0.45),
+    transparent
+  );
+}
+
+/* ========================================
+   DRIVER INFORMATION
+======================================== */
+
+.ticket-sactwu .field-label {
+  color: #89919a;
+}
+
+.ticket-sactwu .attendee h1 {
+  color: #fff;
+
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.ticket-sactwu .attendee h2 {
+  color: var(--sactwu-yellow);
+
+  text-shadow: 0 0 15px rgba(255, 212, 0, 0.1);
+}
+
+/* ========================================
+   ATTENDING BADGE
+======================================== */
+
+.ticket-sactwu .attendance {
+  color: #050607;
+
+  background: linear-gradient(90deg, var(--sactwu-yellow), #ffe45c);
+
+  border-color: var(--sactwu-yellow);
+
+  font-weight: 900;
+
+  box-shadow: 0 5px 18px rgba(255, 212, 0, 0.15);
+}
+
+/* ========================================
+   DRIVER PROFILE
+======================================== */
+
+.ticket-sactwu .profile-image {
+  border-color: rgba(255, 212, 0, 0.55);
+
+  background: radial-gradient(circle, rgba(255, 212, 0, 0.13), #080a0d 68%);
+
+  box-shadow: 0 0 35px rgba(255, 212, 0, 0.08);
+}
+
+.ticket-sactwu .profile-ring {
+  border-color: rgba(227, 6, 19, 0.65);
+}
+
+.ticket-sactwu .profile > span {
+  color: var(--sactwu-yellow);
+}
+
+/* ========================================
+   HELMET
+======================================== */
+
+.ticket-sactwu .helmet {
+  background: linear-gradient(
+    135deg,
+    #fff3a1 0%,
+    var(--sactwu-yellow) 25%,
+    var(--sactwu-red) 27%,
+    var(--sactwu-red) 48%,
+    #08090a 50%,
+    #050607 100%
+  );
+}
+
+.ticket-sactwu .visor {
+  background: linear-gradient(135deg, #050607, #30363b);
+
+  border-color: rgba(255, 212, 0, 0.35);
+}
+
+/* ========================================
+   CAR ZONE
+======================================== */
+
+.ticket-sactwu .car-zone {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255, 212, 0, 0.025) 45%,
+    rgba(227, 6, 19, 0.06) 75%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+/* ========================================
+   CAR GLOW
+======================================== */
+
+.ticket-sactwu .car-glow {
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 212, 0, 0.22),
+    rgba(227, 6, 19, 0.12),
+    transparent 70%
+  );
+
+  filter: blur(38px);
+}
+
+/* ========================================
+   SPEED LINES
+======================================== */
+
+.ticket-sactwu .speed-line {
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--sactwu-red),
+    var(--sactwu-yellow),
+    transparent
+  );
+}
+
+/* ========================================
+   SACTWU CAR LIVERY
+======================================== */
+
+.ticket-sactwu .car {
+  filter: drop-shadow(0 25px 22px rgba(0, 0, 0, 0.85))
+    drop-shadow(0 0 30px rgba(255, 212, 0, 0.12));
+}
+
+/* Main yellow body */
+
+.ticket-sactwu .car .body {
+  background: linear-gradient(
+    135deg,
+    #fff06a 0%,
+    var(--sactwu-yellow) 27%,
+    #e4b900 32%,
+    #191b1d 34%,
+    #050607 62%,
+    var(--sactwu-red) 64%,
+    var(--sactwu-red-dark) 100%
+  );
+}
+
+/* Nose */
+
+.ticket-sactwu .car .nose {
+  background: linear-gradient(
+    90deg,
+    #050607 0%,
+    var(--sactwu-yellow) 28%,
+    var(--sactwu-yellow) 50%,
+    var(--sactwu-red) 68%,
+    #050607 100%
+  );
+}
+
+/* Sidepods */
+
+.ticket-sactwu .car .sidepod {
+  background: linear-gradient(
+    135deg,
+    var(--sactwu-yellow) 0%,
+    #f2c500 42%,
+    var(--sactwu-red) 44%,
+    var(--sactwu-red-dark) 72%,
+    #070809 100%
+  );
+}
+
+/* Front wing */
+
+.ticket-sactwu .car .front-wing {
+  background: linear-gradient(
+    90deg,
+    #050607 0%,
+    var(--sactwu-red) 28%,
+    var(--sactwu-yellow) 45%,
+    var(--sactwu-red) 62%,
+    #050607 100%
+  );
+}
+
+/* Rear wing */
+
+.ticket-sactwu .car .rear-wing {
+  border-color: #08090a;
+
+  background: linear-gradient(90deg, var(--sactwu-yellow), var(--sactwu-red));
+}
+
+/* Cockpit */
+
+.ticket-sactwu .car .cockpit {
+  background: linear-gradient(135deg, #050607, #24282c);
+
+  border-color: rgba(255, 212, 0, 0.3);
+}
+
+/* ========================================
+   WHEELS
+======================================== */
+
+.ticket-sactwu .car .wheel {
+  box-shadow: inset 0 0 0 2px rgba(255, 212, 0, 0.08);
+}
+
+/* ========================================
+   CAR LABEL
+======================================== */
+
+.ticket-sactwu .car-label {
+  color: var(--sactwu-yellow);
+
+  font:
+    700 italic 15px / 1 Rajdhani,
+    sans-serif;
+
+  letter-spacing: 0.16em;
+
+  text-shadow: 0 0 18px rgba(255, 212, 0, 0.18);
+}
+
+/* ========================================
+   EVENT DETAILS
+======================================== */
+
+.ticket-sactwu .event-detail strong {
+  color: #f1f2f3;
+}
+
+.ticket-sactwu .pass-id {
+  color: var(--sactwu-yellow) !important;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.ticket-sactwu .ticket-footer span {
+  color: #717a83;
+}
+
+.ticket-sactwu .ticket-footer strong {
+  color: var(--sactwu-yellow);
+}
+
+/* ========================================
+   PRINT
+======================================== */
+
+@media print {
+  .ticket-sactwu {
+    border-color: transparent;
+
+    box-shadow: none;
+  }
+
+  .ticket-sactwu::before,
+  .ticket-sactwu::after {
+    display: block;
+  }
+}

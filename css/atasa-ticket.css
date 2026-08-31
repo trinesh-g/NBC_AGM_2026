@@ -1,0 +1,476 @@
+/* ========================================
+   ATASA GRID PASS
+   WHITE / BLACK / RED
+======================================== */
+
+.ticket-page-atasa {
+  --atasa-red: #ed1c24;
+  --atasa-red-dark: #b30910;
+  --atasa-red-light: #ff3038;
+
+  --atasa-white: #ffffff;
+  --atasa-offwhite: #f1f3f5;
+  --atasa-silver: #c4c8cc;
+
+  --atasa-black: #050607;
+  --atasa-carbon: #17191b;
+}
+
+/* ========================================
+   MAIN TICKET
+======================================== */
+
+.ticket-atasa {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 75% 25%,
+      rgba(237, 28, 36, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #ffffff 0%, #f2f3f4 42%, #e5e7e9 100%);
+
+  color: var(--atasa-black);
+
+  border-color: rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.75),
+    0 0 70px rgba(237, 28, 36, 0.06);
+
+  overflow: hidden;
+}
+
+/* ========================================
+   SUBTLE CARBON TEXTURE
+======================================== */
+
+.ticket-atasa::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.018) 0,
+    rgba(0, 0, 0, 0.018) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+
+  opacity: 0.45;
+}
+
+/* ========================================
+   RED DIAGONAL RACING STRIPE
+======================================== */
+
+.ticket-atasa::after {
+  content: "";
+
+  position: absolute;
+
+  top: -35%;
+  right: 7%;
+
+  width: 150px;
+  height: 170%;
+
+  transform: rotate(20deg);
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 32%,
+
+    rgba(237, 28, 36, 0.06) 32%,
+    rgba(237, 28, 36, 0.06) 44%,
+
+    rgba(0, 0, 0, 0.035) 44%,
+    rgba(0, 0, 0, 0.035) 52%,
+
+    rgba(237, 28, 36, 0.12) 52%,
+    rgba(237, 28, 36, 0.12) 64%,
+
+    transparent 64%
+  );
+}
+
+/* ========================================
+   TOP / BOTTOM LINES
+======================================== */
+
+.ticket-atasa .ticket-top-line,
+.ticket-atasa .ticket-bottom-line {
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #050607 0%,
+    #050607 18%,
+
+    var(--atasa-red) 18%,
+    var(--atasa-red) 38%,
+
+    #050607 38%,
+    #050607 62%,
+
+    var(--atasa-red) 62%,
+    var(--atasa-red) 82%,
+
+    #050607 82%,
+    #050607 100%
+  );
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.ticket-atasa .eyebrow {
+  color: var(--atasa-red);
+
+  font-weight: 800;
+
+  text-shadow: none;
+}
+
+.ticket-atasa .ticket-year {
+  color: #08090a;
+
+  text-shadow: 3px 3px 0 rgba(237, 28, 36, 0.14);
+}
+
+.ticket-atasa .ticket-class span {
+  color: var(--atasa-red);
+
+  text-shadow: none;
+}
+
+.ticket-atasa .ticket-class small {
+  color: #4e5358;
+
+  font-weight: 800;
+}
+
+/* ========================================
+   DIVIDERS
+======================================== */
+
+.ticket-atasa .ticket-divider {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.18),
+    rgba(237, 28, 36, 0.75),
+    rgba(0, 0, 0, 0.18),
+    transparent
+  );
+}
+
+/* ========================================
+   ATTENDEE
+======================================== */
+
+.ticket-atasa .field-label {
+  color: #686d72;
+}
+
+.ticket-atasa .attendee h1 {
+  color: #050607;
+
+  text-shadow: none;
+}
+
+.ticket-atasa .attendee h2 {
+  color: var(--atasa-red);
+
+  text-shadow: none;
+}
+
+/* ========================================
+   ATTENDANCE
+======================================== */
+
+.ticket-atasa .attendance {
+  color: #ffffff;
+
+  background: linear-gradient(90deg, #050607, #202326);
+
+  border-color: rgba(237, 28, 36, 0.7);
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+/* ========================================
+   DRIVER PROFILE
+======================================== */
+
+.ticket-atasa .profile-image {
+  border-color: rgba(0, 0, 0, 0.25);
+
+  background: radial-gradient(circle, #ffffff, #e4e6e8 70%, #c9cdd1 100%);
+
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+}
+
+.ticket-atasa .profile-ring {
+  border-color: var(--atasa-red);
+}
+
+.ticket-atasa .profile > span {
+  color: var(--atasa-red);
+
+  font-weight: 700;
+}
+
+/* ========================================
+   HELMET
+======================================== */
+
+.ticket-atasa .helmet {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #ffffff 38%,
+    var(--atasa-red) 40%,
+    var(--atasa-red) 52%,
+    #08090a 54%,
+    #08090a 100%
+  );
+}
+
+.ticket-atasa .visor {
+  background: linear-gradient(135deg, #050607, #33373a);
+
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   CAR ZONE
+======================================== */
+
+.ticket-atasa .car-zone {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.015) 40%,
+    rgba(237, 28, 36, 0.045) 75%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
+}
+
+/* ========================================
+   CAR GLOW
+======================================== */
+
+.ticket-atasa .car-glow {
+  background: radial-gradient(
+    ellipse,
+    rgba(237, 28, 36, 0.17),
+    rgba(0, 0, 0, 0.05),
+    transparent 70%
+  );
+
+  filter: blur(42px);
+}
+
+/* ========================================
+   SPEED LINES
+======================================== */
+
+.ticket-atasa .speed-line {
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--atasa-red),
+    #050607,
+    transparent
+  );
+}
+
+/* ========================================
+   CSS CAR FALLBACK
+======================================== */
+
+.ticket-atasa .car {
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 0 28px rgba(237, 28, 36, 0.1));
+}
+
+/* Body */
+
+.ticket-atasa .car .body {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #ffffff 35%,
+    var(--atasa-red) 37%,
+    #b30910 50%,
+    #050607 56%,
+    var(--atasa-red) 68%,
+    #ffffff 72%,
+    #ffffff 100%
+  );
+}
+
+/* Nose */
+
+.ticket-atasa .car .nose {
+  background: linear-gradient(
+    90deg,
+    #050607 0%,
+    #050607 20%,
+    var(--atasa-red) 28%,
+    #ffffff 48%,
+    #ffffff 55%,
+    var(--atasa-red) 70%,
+    #050607 82%,
+    #050607 100%
+  );
+}
+
+/* Sidepods */
+
+.ticket-atasa .car .sidepod {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #ffffff 42%,
+    var(--atasa-red) 45%,
+    #b30910 65%,
+    #050607 100%
+  );
+}
+
+/* Front wing */
+
+.ticket-atasa .car .front-wing {
+  background: linear-gradient(
+    90deg,
+    #050607,
+    #050607 25%,
+    var(--atasa-red) 35%,
+    #ffffff 50%,
+    var(--atasa-red) 65%,
+    #050607 75%,
+    #050607
+  );
+}
+
+/* Rear wing */
+
+.ticket-atasa .car .rear-wing {
+  background: linear-gradient(
+    90deg,
+    #050607,
+    #050607 30%,
+    var(--atasa-red) 42%,
+    #ffffff 58%,
+    var(--atasa-red) 70%,
+    #050607
+  );
+
+  border-color: #050607;
+}
+
+/* Cockpit */
+
+.ticket-atasa .car .cockpit {
+  background: linear-gradient(135deg, #020303, #34383b);
+
+  border-color: rgba(237, 28, 36, 0.5);
+}
+
+/* Wheels */
+
+.ticket-atasa .car .wheel {
+  box-shadow: inset 0 0 0 2px rgba(237, 28, 36, 0.35);
+}
+
+/* ========================================
+   CAR LABEL
+======================================== */
+
+.ticket-atasa .car-label {
+  color: #08090a;
+
+  font:
+    700 italic 15px / 1 Rajdhani,
+    sans-serif;
+
+  letter-spacing: 0.16em;
+
+  text-shadow: none;
+}
+
+/* ========================================
+   EVENT DETAILS
+======================================== */
+
+.ticket-atasa .event-detail strong {
+  color: #08090a;
+}
+
+.ticket-atasa .pass-id {
+  color: var(--atasa-red) !important;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.ticket-atasa .ticket-footer span {
+  color: #666b70;
+}
+
+.ticket-atasa .ticket-footer strong {
+  color: var(--atasa-red);
+}
+
+/* ========================================
+   ACTUAL ATASA CAR IMAGE
+======================================== */
+
+.ticket-atasa .car-image {
+  position: relative;
+  z-index: 3;
+
+  display: block;
+
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 25px 30px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 35px rgba(237, 28, 36, 0.12));
+}
+
+/* ========================================
+   PRINT
+======================================== */
+
+@media print {
+  .ticket-atasa {
+    border-color: transparent;
+
+    box-shadow: none;
+  }
+
+  .ticket-atasa::before,
+  .ticket-atasa::after {
+    display: block;
+  }
+}

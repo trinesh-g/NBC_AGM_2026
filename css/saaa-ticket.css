@@ -1,0 +1,455 @@
+/* ========================================
+   SAAA GRID PASS
+   South African Apparel Association
+   Green / White / Black Racing Livery
+======================================== */
+
+.ticket-page-saaa {
+  --saaa-green: #00a651;
+  --saaa-green-bright: #18d878;
+  --saaa-green-dark: #006b35;
+  --saaa-green-deep: #043d25;
+
+  --saaa-white: #f4f7f5;
+  --saaa-silver: #aab5af;
+
+  --saaa-black: #030706;
+  --saaa-carbon: #101513;
+}
+
+/* ========================================
+   TICKET FOUNDATION
+======================================== */
+
+.ticket-saaa {
+  position: relative;
+
+  background:
+    radial-gradient(circle at 72% 32%, rgba(0, 166, 81, 0.16), transparent 30%),
+    radial-gradient(circle at 18% 78%, rgba(0, 166, 81, 0.08), transparent 32%),
+    linear-gradient(135deg, #111815 0%, #080d0a 48%, #020504 100%);
+
+  border-color: rgba(0, 166, 81, 0.38);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.88),
+    0 0 85px rgba(0, 166, 81, 0.08);
+}
+
+/* ========================================
+   CARBON FIBRE TEXTURE
+======================================== */
+
+.ticket-saaa::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.018) 0,
+    rgba(255, 255, 255, 0.018) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+
+  opacity: 0.4;
+}
+
+/* ========================================
+   DIAGONAL GREEN RACING GRAPHIC
+======================================== */
+
+.ticket-saaa::after {
+  content: "";
+
+  position: absolute;
+
+  top: -30%;
+  right: 8%;
+
+  width: 180px;
+  height: 170%;
+
+  transform: rotate(20deg);
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 22%,
+
+    rgba(0, 166, 81, 0.045) 22%,
+    rgba(0, 166, 81, 0.045) 40%,
+
+    rgba(255, 255, 255, 0.035) 40%,
+    rgba(255, 255, 255, 0.035) 51%,
+
+    rgba(0, 166, 81, 0.075) 51%,
+    rgba(0, 166, 81, 0.075) 67%,
+
+    transparent 67%
+  );
+}
+
+/* ========================================
+   TOP / BOTTOM RACING LINES
+======================================== */
+
+.ticket-saaa .ticket-top-line,
+.ticket-saaa .ticket-bottom-line {
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--saaa-green-dark) 15%,
+    var(--saaa-green) 32%,
+    #ffffff 50%,
+    var(--saaa-green) 68%,
+    var(--saaa-green-dark) 85%,
+    transparent 100%
+  );
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.ticket-saaa .eyebrow {
+  color: var(--saaa-green-bright);
+
+  text-shadow: 0 0 16px rgba(0, 166, 81, 0.18);
+}
+
+.ticket-saaa .ticket-year {
+  color: #ffffff;
+
+  text-shadow: 4px 4px 0 rgba(0, 166, 81, 0.2);
+}
+
+.ticket-saaa .ticket-class span {
+  color: var(--saaa-green-bright);
+
+  text-shadow: 0 0 16px rgba(0, 166, 81, 0.18);
+}
+
+.ticket-saaa .ticket-class small {
+  color: var(--saaa-silver);
+
+  font-weight: 800;
+}
+
+/* ========================================
+   DIVIDERS
+======================================== */
+
+.ticket-saaa .ticket-divider {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 166, 81, 0.22),
+    rgba(0, 166, 81, 0.8),
+    rgba(0, 166, 81, 0.22),
+    transparent
+  );
+}
+
+/* ========================================
+   DRIVER INFORMATION
+======================================== */
+
+.ticket-saaa .field-label {
+  color: #7d8982;
+}
+
+.ticket-saaa .attendee h1 {
+  color: #ffffff;
+
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+}
+
+.ticket-saaa .attendee h2 {
+  color: var(--saaa-green-bright);
+
+  text-shadow: 0 0 18px rgba(0, 166, 81, 0.15);
+}
+
+/* ========================================
+   ATTENDING BADGE
+======================================== */
+
+.ticket-saaa .attendance {
+  color: #ffffff;
+
+  background: linear-gradient(90deg, var(--saaa-green-dark), var(--saaa-green));
+
+  border-color: rgba(24, 216, 120, 0.8);
+
+  box-shadow: 0 6px 20px rgba(0, 166, 81, 0.18);
+}
+
+/* ========================================
+   DRIVER PROFILE
+======================================== */
+
+.ticket-saaa .profile-image {
+  border-color: rgba(0, 166, 81, 0.65);
+
+  background: radial-gradient(circle, rgba(0, 166, 81, 0.16), #080d0a 68%);
+
+  box-shadow: 0 0 40px rgba(0, 166, 81, 0.1);
+}
+
+.ticket-saaa .profile-ring {
+  border-color: rgba(24, 216, 120, 0.75);
+}
+
+.ticket-saaa .profile > span {
+  color: var(--saaa-green-bright);
+}
+
+/* ========================================
+   SAAA HELMET
+======================================== */
+
+.ticket-saaa .helmet {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #dce9e1 25%,
+    var(--saaa-green) 28%,
+    var(--saaa-green) 56%,
+    var(--saaa-green-dark) 58%,
+    #050807 100%
+  );
+}
+
+.ticket-saaa .visor {
+  background: linear-gradient(135deg, #020403, #164c31);
+
+  border-color: rgba(24, 216, 120, 0.4);
+}
+
+/* ========================================
+   CAR ZONE
+======================================== */
+
+.ticket-saaa .car-zone {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 166, 81, 0.025) 40%,
+    rgba(0, 166, 81, 0.07) 72%,
+    rgba(0, 0, 0, 0.58) 100%
+  );
+}
+
+/* ========================================
+   SAAA CAR GLOW
+======================================== */
+
+.ticket-saaa .car-glow {
+  background: radial-gradient(
+    ellipse,
+    rgba(0, 166, 81, 0.28),
+    rgba(24, 216, 120, 0.1),
+    transparent 70%
+  );
+
+  filter: blur(40px);
+}
+
+/* ========================================
+   SPEED LINES
+======================================== */
+
+.ticket-saaa .speed-line {
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--saaa-green-dark),
+    var(--saaa-green-bright),
+    transparent
+  );
+}
+
+/* ========================================
+   CSS CAR — SAAA LIVERY
+======================================== */
+
+.ticket-saaa .car {
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.85))
+    drop-shadow(0 0 32px rgba(0, 166, 81, 0.15));
+}
+
+/* Main body */
+
+.ticket-saaa .car .body {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #dce9e1 18%,
+    var(--saaa-green) 21%,
+    #08763d 43%,
+    #041b10 56%,
+    var(--saaa-green) 68%,
+    #ffffff 71%,
+    #dce9e1 100%
+  );
+}
+
+/* Nose */
+
+.ticket-saaa .car .nose {
+  background: linear-gradient(
+    90deg,
+    #040706 0%,
+    var(--saaa-green-dark) 22%,
+    var(--saaa-green) 42%,
+    #ffffff 52%,
+    var(--saaa-green) 68%,
+    #040706 100%
+  );
+}
+
+/* Sidepods */
+
+.ticket-saaa .car .sidepod {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #dce9e1 30%,
+    var(--saaa-green) 32%,
+    #08763d 62%,
+    #04100a 100%
+  );
+}
+
+/* Front wing */
+
+.ticket-saaa .car .front-wing {
+  background: linear-gradient(
+    90deg,
+    #030504 0%,
+    var(--saaa-green-dark) 25%,
+    var(--saaa-green) 42%,
+    #ffffff 52%,
+    var(--saaa-green) 62%,
+    #030504 100%
+  );
+}
+
+/* Rear wing */
+
+.ticket-saaa .car .rear-wing {
+  background: linear-gradient(
+    90deg,
+    var(--saaa-green-dark),
+    var(--saaa-green),
+    #ffffff
+  );
+
+  border-color: #030504;
+}
+
+/* Cockpit */
+
+.ticket-saaa .car .cockpit {
+  background: linear-gradient(135deg, #020403, #17231c);
+
+  border-color: rgba(24, 216, 120, 0.35);
+}
+
+/* ========================================
+   WHEELS
+======================================== */
+
+.ticket-saaa .car .wheel {
+  box-shadow: inset 0 0 0 2px rgba(0, 166, 81, 0.14);
+}
+
+/* ========================================
+   CAR LABEL
+======================================== */
+
+.ticket-saaa .car-label {
+  color: var(--saaa-green-bright);
+
+  font:
+    700 italic 15px / 1 Rajdhani,
+    sans-serif;
+
+  letter-spacing: 0.16em;
+
+  text-shadow: 0 0 18px rgba(0, 166, 81, 0.2);
+}
+
+/* ========================================
+   EVENT DETAILS
+======================================== */
+
+.ticket-saaa .event-detail strong {
+  color: #f1f4f2;
+}
+
+.ticket-saaa .pass-id {
+  color: var(--saaa-green-bright) !important;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.ticket-saaa .ticket-footer span {
+  color: #707b74;
+}
+
+.ticket-saaa .ticket-footer strong {
+  color: var(--saaa-green-bright);
+}
+
+/* ========================================
+   ACTUAL SAAA CAR IMAGE
+======================================== */
+
+.ticket-saaa .car-image {
+  position: relative;
+  z-index: 3;
+
+  display: block;
+
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 25px 30px rgba(0, 0, 0, 0.85))
+    drop-shadow(0 0 35px rgba(0, 166, 81, 0.16));
+}
+
+/* ========================================
+   PRINT
+======================================== */
+
+@media print {
+  .ticket-saaa {
+    border-color: transparent;
+
+    box-shadow: none;
+  }
+
+  .ticket-saaa::before,
+  .ticket-saaa::after {
+    display: block;
+  }
+}

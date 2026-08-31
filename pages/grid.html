@@ -19,11 +19,9 @@
 
   <body>
     <main class="site" id="site">
-      <!-- ========================================
-           HERO
-      ========================================= -->
-
+      <!-- HERO -->
       <section class="hero">
+        <!-- Navigation -->
         <nav class="nav">
           <div class="brand">
             <a href="../index.html">
@@ -31,95 +29,87 @@
             </a>
           </div>
 
-          <span class="nav-tag"> YOU ARE INVITED <i></i> </span>
+          <span class="nav-tag">
+            YOU ARE INVITED
+            <i></i>
+          </span>
         </nav>
 
         <div class="hero-copy">
-          <p class="eyebrow">THE LIGHTS ARE ABOUT TO GO OUT.</p>
+          <div class="event-intro">
+            <p class="hero-title">NBC ANNUAL GENERAL MEETING</p>
 
-          <h1>
-            <span>TAKE YOUR PLACE</span>
-            <span>ON THE <em>GRID</em></span>
-          </h1>
+            <div class="year">2026</div>
 
-          <p class="subline">
-            Different teams.
-            <strong>One shared future.</strong>
-          </p>
+            <h2 class="hero-main-title">ACCELERATING INTO THE FUTURE</h2>
+
+            <p>
+              Join us as we reflect on our journey, celebrate our achievements
+              and drive forward our shared vision for a stronger, more
+              sustainable industry.
+            </p>
+
+            <span class="hashtag">#NBCAGM2026</span>
+          </div>
         </div>
 
-        <!-- ========================================
-     CAR SHOWCASE
-======================================== -->
-
-        <section class="car-showcase" aria-label="Interactive racing car carousel">
-          <!-- Background red glow -->
+        <!-- CAR SHOWCASE -->
+        <section
+          class="car-showcase"
+          aria-label="Interactive racing car carousel"
+        >
           <div class="showcase-glow"></div>
 
-          <!-- Racing road/grid underneath the cars -->
           <div class="road"></div>
 
-          <!-- Speed lines -->
           <div class="speed-line speed-line-a"></div>
           <div class="speed-line speed-line-b"></div>
 
-          <!-- ======================================
-       CAR DISPLAY
-  ======================================= -->
-
+          <!-- Selected Car Information -->
           <div class="car-info">
-            <span class="car-kicker"> SELECTED MACHINE </span>
+            <span class="car-kicker">SELECTED MACHINE</span>
+
             <h2 id="carName"></h2>
 
             <p id="carDescription"></p>
           </div>
 
+          <!-- Car Carousel -->
           <div class="car-container">
-            <!-- Previous car -->
-            <button type="button" class="carousel-arrow carousel-prev" id="prevCar" aria-label="Previous car">‹</button>
-
-            <!--
-      JavaScript injects all the cars here.
-
-      The HTML starts empty:
-
-          <div id="cars"></div>
-
-      JavaScript then creates:
-
-          <button class="car-card">
-              <img ...>
-          </button>
-
-      for every car.
-    -->
+            <button
+              type="button"
+              class="carousel-arrow carousel-prev"
+              id="prevCar"
+              aria-label="Previous car"
+            >
+              ‹
+            </button>
 
             <div class="cars" id="cars"></div>
 
-            <!-- Next car -->
-            <button type="button" class="carousel-arrow carousel-next" id="nextCar" aria-label="Next car">›</button>
+            <button
+              type="button"
+              class="carousel-arrow carousel-next"
+              id="nextCar"
+              aria-label="Next car"
+            >
+              ›
+            </button>
           </div>
 
-          <!-- ======================================
-       SELECTED CAR INFORMATION
-  ======================================= -->
-
-          <div class="car-info">
+          <!-- Car Actions -->
+          <div class="car-actions">
             <button type="button" class="wallpaper-button" id="wallpaperButton">
               VIEW WALLPAPER
               <span>↗</span>
             </button>
           </div>
 
+          <!-- Carousel Indicators -->
           <div class="carousel-dots" id="carouselDots"></div>
-
-          <!-- Small instruction -->
         </section>
 
-        <!-- ========================================
-             PILLARS
-        ========================================= -->
-
+        <!-- PILLARS -->
         <div class="pillars">
           <div>
             <span>◈</span>
@@ -148,32 +138,26 @@
         </div>
       </section>
 
-      <!-- ========================================
-           EVENT
-      ======================================== -->
-
+      <!-- EVENT -->
       <section class="event">
-        <div class="event-intro">
-          <p class="eyebrow">NBC ANNUAL GENERAL MEETING</p>
+        <div class="rsvp">
+          <p class="event-kicker">THE LIGHTS ARE ABOUT TO GO OUT.</p>
 
-          <div class="year">2026</div>
+          <a href="rsvp.html" id="rsvpButton" class="cta">
+            TAKE YOUR PLACE ON THE GRID
+            <span>›</span>
+          </a>
 
-          <h2>ACCELERATING INTO THE FUTURE</h2>
-
-          <p>
-            Join us as we reflect on our journey, celebrate our achievements and drive forward our shared vision for a stronger, more sustainable
-            industry.
-          </p>
+          <small>KINDLY RESPOND BY 15 SEPTEMBER 2026</small>
         </div>
-
         <div class="details">
           <article>
             <span>▦</span>
 
             <div>
               <label>DATE</label>
-              <strong>28 MAY 2026</strong>
-              <small>THURSDAY</small>
+              <strong>28 OCTOBER 2026</strong>
+              <small>WEDNESDAY</small>
             </div>
           </article>
 
@@ -182,8 +166,8 @@
 
             <div>
               <label>TIME</label>
-              <strong>09:00</strong>
-              <small>REGISTRATION FROM 08:00</small>
+              <strong>10:00 - 11:30</strong>
+              <small>REGISTRATION FROM 09:30</small>
             </div>
           </article>
 
@@ -198,48 +182,59 @@
           </article>
         </div>
 
-        <div class="rsvp">
-          <p>CONFIRM YOUR ATTENDANCE</p>
-
-          <a href="rsvp.html" id="rsvpButton" class="cta">
-            TAKE YOUR PLACE ON THE GRID
-            <span>›</span>
-          </a>
-
-          <small> KINDLY RESPOND BY 15 MAY 2026 </small>
-        </div>
+        <!-- RSVP -->
       </section>
-
-      <!-- ========================================
-           CLOSING
-      ======================================== -->
 
       <section class="closing">
         <p>TOGETHER WE DRIVE.</p>
-        <p><strong>TOGETHER WE WIN.</strong></p>
-        <span>#NBCAGM2026</span>
+
+        <p>
+          <strong>TOGETHER WE WIN.</strong>
+        </p>
+
+        <div class="closing__lines"></div>
       </section>
 
-      <!-- ========================================
-           FOOTER
-      ======================================== -->
-
+      <!-- FOOTER -->
       <footer class="footer">
-        <a href="mailto:info@nbc.org.za">✉ &nbsp; info@nbc.org.za</a><i></i
-        ><a href="https://www.nbc.org.za" target="_blank" rel="noreferrer">◎ &nbsp; www.nbc.org.za</a><i></i
-        ><a href="tel:+27114071600">♧ &nbsp; 011 407 1600</a>
+        <div class="footer-content">
+          <div class="footer-left">NBC Head Office</div>
+
+          <a
+            class="footer-center"
+            href="https://www.nbc.org.za"
+            target="_blank"
+            rel="noreferrer"
+          >
+            ◎ &nbsp; www.nbc.org.za
+          </a>
+
+          <div class="footer-right">
+            © Copyright 2019–2026 National Bargaining Council | All Rights
+            Reserved
+          </div>
+        </div>
       </footer>
     </main>
 
-    <!-- ========================================
-         CAR MODAL
-    ======================================== -->
-
+    <!-- CAR MODAL -->
     <div class="car-modal" id="carModal" aria-hidden="true">
       <div class="modal-backdrop" data-close-modal></div>
 
-      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalCarName">
-        <button type="button" class="modal-close" id="modalClose" aria-label="Close car view">×</button>
+      <section
+        class="modal-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalCarName"
+      >
+        <button
+          type="button"
+          class="modal-close"
+          id="modalClose"
+          aria-label="Close car view"
+        >
+          ×
+        </button>
 
         <div class="modal-car-art" id="modalCarArt"></div>
 
@@ -258,18 +253,21 @@
       </section>
     </div>
 
-    <!-- ========================================
-         AUDIO
-    ======================================== -->
+    <!-- AUDIO -->
+    <audio
+      id="mainLoading"
+      preload="auto"
+      src="../assets/audio/main-load.wav"
+    ></audio>
 
-    <audio id="mainLoading" preload="auto" src="../assets/audio/main-load.wav"></audio>
+    <audio
+      id="mainMusic"
+      preload="auto"
+      loop
+      src="../assets/audio/main.mp3"
+    ></audio>
 
-    <audio id="mainMusic" preload="auto" loop src="../assets/audio/main.mp3"></audio>
-
-    <!-- ========================================
-         SCRIPTS
-    ======================================== -->
-
+    <!-- SCRIPTS -->
     <script src="../js/carousel.js"></script>
     <script type="module" src="../js/main.js"></script>
   </body>

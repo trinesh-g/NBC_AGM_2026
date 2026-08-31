@@ -1,0 +1,460 @@
+/* ========================================
+   NBC GRID PASS
+   NBC Blue / White / SA Identity
+======================================== */
+
+.ticket-page-nbc {
+  --nbc-blue: #0878e8;
+  --nbc-blue-dark: #034b9c;
+  --nbc-blue-light: #35a8ff;
+  --nbc-white: #f5f8fc;
+  --nbc-silver: #aeb8c4;
+  --nbc-green: #007a3d;
+  --nbc-gold: #ffb81c;
+  --nbc-red: #d71920;
+}
+
+/* ========================================
+   TICKET
+======================================== */
+
+.ticket-nbc {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 72% 32%,
+      rgba(8, 120, 232, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 18% 78%,
+      rgba(8, 120, 232, 0.08),
+      transparent 32%
+    ),
+    linear-gradient(135deg, #101820 0%, #080d13 48%, #030507 100%);
+
+  border-color: rgba(8, 120, 232, 0.35);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.85),
+    0 0 80px rgba(8, 120, 232, 0.07);
+}
+
+/* ========================================
+   CARBON TEXTURE
+======================================== */
+
+.ticket-nbc::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.018) 0,
+    rgba(255, 255, 255, 0.018) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+
+  opacity: 0.4;
+}
+
+/* ========================================
+   NBC BLUE DIAGONAL
+======================================== */
+
+.ticket-nbc::after {
+  content: "";
+
+  position: absolute;
+
+  top: -30%;
+  right: 8%;
+
+  width: 180px;
+  height: 170%;
+
+  transform: rotate(20deg);
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 22%,
+
+    rgba(8, 120, 232, 0.05) 22%,
+    rgba(8, 120, 232, 0.05) 42%,
+
+    rgba(255, 255, 255, 0.045) 42%,
+    rgba(255, 255, 255, 0.045) 53%,
+
+    rgba(8, 120, 232, 0.08) 53%,
+    rgba(8, 120, 232, 0.08) 68%,
+
+    transparent 68%
+  );
+}
+
+/* ========================================
+   TOP / BOTTOM LINES
+======================================== */
+
+.ticket-nbc .ticket-top-line,
+.ticket-nbc .ticket-bottom-line {
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--nbc-blue-dark) 15%,
+    var(--nbc-blue) 32%,
+    #ffffff 50%,
+    var(--nbc-blue) 68%,
+    var(--nbc-blue-dark) 85%,
+    transparent 100%
+  );
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.ticket-nbc .eyebrow {
+  color: var(--nbc-blue-light);
+
+  text-shadow: 0 0 16px rgba(8, 120, 232, 0.2);
+}
+
+.ticket-nbc .ticket-year {
+  color: #ffffff;
+
+  text-shadow: 4px 4px 0 rgba(8, 120, 232, 0.22);
+}
+
+.ticket-nbc .ticket-class span {
+  color: var(--nbc-blue-light);
+
+  text-shadow: 0 0 16px rgba(8, 120, 232, 0.2);
+}
+
+.ticket-nbc .ticket-class small {
+  color: var(--nbc-silver);
+}
+
+/* ========================================
+   DIVIDERS
+======================================== */
+
+.ticket-nbc .ticket-divider {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(8, 120, 232, 0.25),
+    rgba(8, 120, 232, 0.8),
+    rgba(8, 120, 232, 0.25),
+    transparent
+  );
+}
+
+/* ========================================
+   ATTENDEE
+======================================== */
+
+.ticket-nbc .field-label {
+  color: #7f8b98;
+}
+
+.ticket-nbc .attendee h1 {
+  color: #ffffff;
+
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+}
+
+.ticket-nbc .attendee h2 {
+  color: var(--nbc-blue-light);
+
+  text-shadow: 0 0 18px rgba(8, 120, 232, 0.15);
+}
+
+/* ========================================
+   ATTENDANCE
+======================================== */
+
+.ticket-nbc .attendance {
+  color: #ffffff;
+
+  background: linear-gradient(90deg, var(--nbc-blue-dark), var(--nbc-blue));
+
+  border-color: rgba(53, 168, 255, 0.8);
+
+  box-shadow: 0 6px 20px rgba(8, 120, 232, 0.18);
+}
+
+/* ========================================
+   DRIVER PROFILE
+======================================== */
+
+.ticket-nbc .profile-image {
+  border-color: rgba(8, 120, 232, 0.65);
+
+  background: radial-gradient(circle, rgba(8, 120, 232, 0.16), #080c11 68%);
+
+  box-shadow: 0 0 40px rgba(8, 120, 232, 0.1);
+}
+
+.ticket-nbc .profile-ring {
+  border-color: rgba(53, 168, 255, 0.75);
+}
+
+.ticket-nbc .profile > span {
+  color: var(--nbc-blue-light);
+}
+
+/* ========================================
+   NBC HELMET
+======================================== */
+
+.ticket-nbc .helmet {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #e8eef5 28%,
+    var(--nbc-blue) 30%,
+    var(--nbc-blue) 56%,
+    #063c82 58%,
+    #050607 100%
+  );
+}
+
+.ticket-nbc .visor {
+  background: linear-gradient(135deg, #020407, #1e5e9e);
+
+  border-color: rgba(53, 168, 255, 0.4);
+}
+
+/* ========================================
+   CAR ZONE
+======================================== */
+
+.ticket-nbc .car-zone {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(8, 120, 232, 0.025) 40%,
+    rgba(8, 120, 232, 0.07) 72%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+/* ========================================
+   NBC CAR GLOW
+======================================== */
+
+.ticket-nbc .car-glow {
+  background: radial-gradient(
+    ellipse,
+    rgba(8, 120, 232, 0.28),
+    rgba(53, 168, 255, 0.1),
+    transparent 70%
+  );
+
+  filter: blur(40px);
+}
+
+/* ========================================
+   SPEED LINES
+======================================== */
+
+.ticket-nbc .speed-line {
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--nbc-blue-dark),
+    var(--nbc-blue-light),
+    transparent
+  );
+}
+
+/* ========================================
+   CSS CAR — NBC LIVERY
+======================================== */
+
+.ticket-nbc .car {
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.85))
+    drop-shadow(0 0 32px rgba(8, 120, 232, 0.14));
+}
+
+/* Main body */
+
+.ticket-nbc .car .body {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #dce8f4 22%,
+    var(--nbc-blue) 25%,
+    #0b5db6 42%,
+    #071321 55%,
+    var(--nbc-blue) 68%,
+    #ffffff 70%,
+    #dce8f4 100%
+  );
+}
+
+/* Nose */
+
+.ticket-nbc .car .nose {
+  background: linear-gradient(
+    90deg,
+    #07101b 0%,
+    var(--nbc-blue-dark) 22%,
+    var(--nbc-blue) 42%,
+    #ffffff 52%,
+    var(--nbc-blue) 68%,
+    #07101b 100%
+  );
+}
+
+/* Sidepods */
+
+.ticket-nbc .car .sidepod {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #dbe7f2 30%,
+    var(--nbc-blue) 32%,
+    #0755a8 62%,
+    #07101b 100%
+  );
+}
+
+/* Front wing */
+
+.ticket-nbc .car .front-wing {
+  background: linear-gradient(
+    90deg,
+    #050607 0%,
+    var(--nbc-blue-dark) 25%,
+    var(--nbc-blue) 42%,
+    #ffffff 52%,
+    var(--nbc-blue) 62%,
+    #050607 100%
+  );
+}
+
+/* Rear wing */
+
+.ticket-nbc .car .rear-wing {
+  background: linear-gradient(
+    90deg,
+    var(--nbc-blue-dark),
+    var(--nbc-blue),
+    #ffffff
+  );
+
+  border-color: #050607;
+}
+
+/* Cockpit */
+
+.ticket-nbc .car .cockpit {
+  background: linear-gradient(135deg, #030507, #18232e);
+
+  border-color: rgba(53, 168, 255, 0.35);
+}
+
+/* ========================================
+   WHEELS
+======================================== */
+
+.ticket-nbc .car .wheel {
+  box-shadow: inset 0 0 0 2px rgba(8, 120, 232, 0.12);
+}
+
+/* ========================================
+   CAR LABEL
+======================================== */
+
+.ticket-nbc .car-label {
+  color: var(--nbc-blue-light);
+
+  font:
+    700 italic 15px / 1 Rajdhani,
+    sans-serif;
+
+  letter-spacing: 0.16em;
+
+  text-shadow: 0 0 18px rgba(8, 120, 232, 0.2);
+}
+
+/* ========================================
+   EVENT DETAILS
+======================================== */
+
+.ticket-nbc .event-detail strong {
+  color: #f1f4f7;
+}
+
+.ticket-nbc .pass-id {
+  color: var(--nbc-blue-light) !important;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.ticket-nbc .ticket-footer span {
+  color: #717b86;
+}
+
+.ticket-nbc .ticket-footer strong {
+  color: var(--nbc-blue-light);
+}
+
+/* ========================================
+   ACTUAL NBC CAR IMAGE
+   If you use the real PNG instead
+   of the CSS-drawn car.
+======================================== */
+
+.ticket-nbc .car-image {
+  position: relative;
+  z-index: 3;
+
+  display: block;
+
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 25px 30px rgba(0, 0, 0, 0.85))
+    drop-shadow(0 0 35px rgba(8, 120, 232, 0.16));
+}
+
+/* ========================================
+   PRINT
+======================================== */
+
+@media print {
+  .ticket-nbc {
+    border-color: transparent;
+
+    box-shadow: none;
+  }
+
+  .ticket-nbc::before,
+  .ticket-nbc::after {
+    display: block;
+  }
+}

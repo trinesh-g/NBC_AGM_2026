@@ -1,47 +1,113 @@
 /* ========================================
-   SACMA TICKET
+   SACMA // SIGMA 01
+   RED / BLACK / SILVER
 ======================================== */
 
-.ticket-sacma {
-  --sacma-red: #d71920;
-  --sacma-red-dark: #920c12;
-  --sacma-silver: #dfe2e5;
-  --sacma-grey: #858e98;
+.ticket-page-sacma {
+  --red: #d71920;
+  --red-dark: #920c12;
+  --red-light: #f12b32;
+
+  --silver: #dfe2e5;
+  --grey: #858e98;
+
+  --black: #080a0d;
 }
 
 /* ========================================
-   SACMA BACKGROUND
+   TICKET
 ======================================== */
 
 .ticket-sacma {
+  color: var(--silver);
+
   background:
     radial-gradient(
-      circle at 82% 28%,
-      rgba(215, 25, 32, 0.18),
-      transparent 27%
+      circle at 82% 18%,
+      rgba(215, 25, 32, 0.14),
+      transparent 30%
     ),
-    linear-gradient(135deg, #191c20 0%, #0b0e12 52%, #030405 100%);
+    radial-gradient(
+      circle at 12% 82%,
+      rgba(215, 25, 32, 0.045),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #191c20 0%, #0b0e12 55%, #030405 100%);
 
-  border-color: rgba(215, 25, 32, 0.42);
+  border-color: rgba(215, 25, 32, 0.3);
 
   box-shadow:
-    0 40px 100px rgba(0, 0, 0, 0.82),
-    0 0 90px rgba(215, 25, 32, 0.1);
+    0 30px 80px rgba(0, 0, 0, 0.72),
+    0 0 55px rgba(215, 25, 32, 0.08);
 }
 
 /* ========================================
-   SACMA TOP/BOTTOM ACCENTS
+   SUBTLE TEXTURE
+======================================== */
+
+.ticket-sacma::before {
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.014) 0,
+    rgba(255, 255, 255, 0.014) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+
+  opacity: 0.35;
+}
+
+/* ========================================
+   SACMA RED GLOW
+======================================== */
+
+.ticket-sacma::after {
+  content: "";
+
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  right: -170px;
+  top: -160px;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle,
+    rgba(215, 25, 32, 0.16),
+    rgba(215, 25, 32, 0.045) 38%,
+    transparent 70%
+  );
+
+  filter: blur(20px);
+}
+
+/* ========================================
+   RACING STRIPES
 ======================================== */
 
 .ticket-sacma .ticket-top-line,
 .ticket-sacma .ticket-bottom-line {
+  height: 4px;
+
   background: linear-gradient(
     90deg,
-    transparent,
-    var(--sacma-red),
-    #ffffff,
-    var(--sacma-red),
-    transparent
+    var(--red-dark) 0%,
+    var(--red-dark) 18%,
+
+    var(--red) 18%,
+    var(--red) 38%,
+
+    #ffffff 38%,
+    #ffffff 50%,
+
+    var(--red) 50%,
+    var(--red) 82%,
+
+    var(--red-dark) 82%,
+    var(--red-dark) 100%
   );
 }
 
@@ -50,33 +116,35 @@
 ======================================== */
 
 .ticket-sacma .eyebrow {
-  color: var(--sacma-red);
+  color: var(--red-light);
 }
 
 .ticket-sacma .ticket-year {
-  color: #fff;
+  color: #ffffff;
 
-  text-shadow: 0 0 25px rgba(215, 25, 32, 0.15);
+  text-shadow: 3px 3px 0 rgba(215, 25, 32, 0.2);
 }
 
 .ticket-sacma .ticket-class span {
-  color: var(--sacma-red);
+  color: var(--red-light);
 }
 
 .ticket-sacma .ticket-class small {
-  color: var(--sacma-silver);
+  color: var(--silver);
 }
 
 /* ========================================
-   DIVIDERS
+   DIVIDER
 ======================================== */
 
 .ticket-sacma .ticket-divider {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(215, 25, 32, 0.7),
-    rgba(255, 255, 255, 0.12),
+    rgba(215, 25, 32, 0.18),
+    rgba(215, 25, 32, 0.72),
+    rgba(255, 255, 255, 0.18),
+    rgba(215, 25, 32, 0.18),
     transparent
   );
 }
@@ -86,15 +154,19 @@
 ======================================== */
 
 .ticket-sacma .field-label {
-  color: var(--sacma-grey);
+  color: var(--grey);
 }
 
 .ticket-sacma .attendee h1 {
-  color: #fff;
+  color: #ffffff;
+
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
 }
 
 .ticket-sacma .attendee h2 {
-  color: var(--sacma-red);
+  color: var(--red-light);
+
+  text-shadow: 0 0 18px rgba(215, 25, 32, 0.15);
 }
 
 /* ========================================
@@ -102,152 +174,59 @@
 ======================================== */
 
 .ticket-sacma .attendance {
-  color: #fff;
+  color: #ffffff;
 
-  background: rgba(215, 25, 32, 0.12);
+  background: linear-gradient(135deg, var(--red-dark), var(--red));
 
-  border-color: rgba(215, 25, 32, 0.75);
+  border-color: rgba(241, 43, 50, 0.65);
 
-  box-shadow: 0 0 20px rgba(215, 25, 32, 0.1);
+  box-shadow: 0 6px 18px rgba(215, 25, 32, 0.18);
 }
 
 /* ========================================
-   PROFILE
+   QR
 ======================================== */
 
-.ticket-sacma .profile-image {
-  border-color: rgba(215, 25, 32, 0.45);
+.ticket-sacma .qr-code {
+  border: 1px solid rgba(241, 43, 50, 0.22);
 
-  background: radial-gradient(circle, rgba(215, 25, 32, 0.15), #07090c 70%);
-
-  box-shadow: 0 0 35px rgba(215, 25, 32, 0.08);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 0 24px rgba(215, 25, 32, 0.1);
 }
 
-.ticket-sacma .profile-ring {
-  border-color: rgba(215, 25, 32, 0.5);
-}
-
-.ticket-sacma .profile > span {
-  color: var(--sacma-grey);
+.ticket-sacma .qr-section > span {
+  color: var(--red-light);
 }
 
 /* ========================================
-   CAR ZONE
-======================================== */
-
-.ticket-sacma .car-zone {
-  background: linear-gradient(
-    180deg,
-    transparent,
-    rgba(215, 25, 32, 0.045),
-    rgba(0, 0, 0, 0.4)
-  );
-}
-
-.ticket-sacma .car-glow {
-  background: radial-gradient(
-    ellipse,
-    rgba(215, 25, 32, 0.32),
-    transparent 70%
-  );
-}
-
-/* ========================================
-   SPEED LINES
-======================================== */
-
-.ticket-sacma .speed-line {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(215, 25, 32, 0.85),
-    transparent
-  );
-}
-
-/* ========================================
-   SACMA CAR LIVERY
-======================================== */
-
-.ticket-sacma .car {
-  filter: drop-shadow(0 25px 20px rgba(0, 0, 0, 0.8))
-    drop-shadow(0 0 22px rgba(215, 25, 32, 0.15));
-}
-
-/* Main body */
-
-.ticket-sacma .car .body {
-  background: linear-gradient(
-    135deg,
-    #f0f0f0 0%,
-    #bfc3c7 28%,
-    #25282c 30%,
-    #08090b 60%,
-    var(--sacma-red) 62%,
-    var(--sacma-red-dark) 100%
-  );
-}
-
-/* Nose */
-
-.ticket-sacma .car .nose {
-  background: linear-gradient(
-    90deg,
-    #070809,
-    var(--sacma-red),
-    #f2f2f2,
-    var(--sacma-red-dark)
-  );
-}
-
-/* Sidepods */
-
-.ticket-sacma .car .sidepod {
-  background: linear-gradient(
-    135deg,
-    #111316,
-    var(--sacma-red) 55%,
-    var(--sacma-red-dark)
-  );
-}
-
-/* Front wing */
-
-.ticket-sacma .car .front-wing {
-  background: linear-gradient(
-    90deg,
-    #050607,
-    var(--sacma-red),
-    #ffffff,
-    var(--sacma-red),
-    #050607
-  );
-}
-
-/* Rear wing */
-
-.ticket-sacma .car .rear-wing {
-  border-color: var(--sacma-red-dark);
-
-  background: linear-gradient(90deg, var(--sacma-red), #090a0c);
-}
-
-/* Cockpit */
-
-.ticket-sacma .car .cockpit {
-  background: linear-gradient(135deg, #020304, #22272c);
-
-  border-color: rgba(255, 255, 255, 0.16);
-}
-
-/* ========================================
-   CAR LABEL
+   SIGMA
 ======================================== */
 
 .ticket-sacma .car-label {
-  color: var(--sacma-red);
+  color: var(--red-light);
 
-  text-shadow: 0 0 16px rgba(215, 25, 32, 0.3);
+  text-shadow: 0 2px 10px rgba(215, 25, 32, 0.16);
+}
+
+.ticket-sacma .car-label::before,
+.ticket-sacma .car-label::after {
+  content: "";
+
+  display: inline-block;
+
+  width: 45px;
+  height: 1px;
+
+  margin: 0 12px;
+
+  vertical-align: middle;
+
+  background: linear-gradient(90deg, transparent, var(--red));
+}
+
+.ticket-sacma .car-label::after {
+  background: linear-gradient(90deg, var(--red), transparent);
 }
 
 /* ========================================
@@ -255,48 +234,23 @@
 ======================================== */
 
 .ticket-sacma .event-detail strong {
-  color: var(--sacma-silver);
+  color: var(--silver);
 }
 
 .ticket-sacma .pass-id {
-  color: var(--sacma-red) !important;
+  color: var(--red-light) !important;
 }
 
 /* ========================================
    FOOTER
 ======================================== */
 
-.ticket-sacma .ticket-footer strong {
-  color: var(--sacma-red);
+.ticket-sacma .ticket-footer span {
+  color: #747b82;
 }
 
-/* ========================================
-   SACMA DIAGONAL GRAPHIC
-======================================== */
-
-.ticket-sacma::after {
-  content: "";
-
-  position: absolute;
-
-  top: -20%;
-  right: 8%;
-
-  width: 180px;
-  height: 150%;
-
-  transform: rotate(18deg);
-
-  pointer-events: none;
-
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(215, 25, 32, 0.045) 45%,
-    rgba(215, 25, 32, 0.12) 50%,
-    rgba(255, 255, 255, 0.025) 51%,
-    transparent 56%
-  );
+.ticket-sacma .ticket-footer strong {
+  color: var(--red-light);
 }
 
 /* ========================================
@@ -308,9 +262,5 @@
     border-color: transparent;
 
     box-shadow: none;
-  }
-
-  .ticket-sacma::after {
-    display: block;
   }
 }

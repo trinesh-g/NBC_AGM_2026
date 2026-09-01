@@ -4,310 +4,154 @@ const cars = [
     accent: "#ef1722",
     label: "01",
     file: "../assets/cars/sacma.png",
-    wallpaper: "../assets/wallpapers/apex-01.svg",
+    wallpaper: "../assets/wallpapers/sacma.png",
   },
-
   {
     name: "SACTRA // 02",
     accent: "#f0f0f0",
     label: "02",
     file: "../assets/cars/sactwu.png",
-    wallpaper: "../assets/wallpapers/volt-02.svg",
+    wallpaper: "../assets/wallpapers/sactwu.png",
   },
-
   {
     name: "ENVI // 03",
     accent: "#ef1722",
     label: "03",
     file: "../assets/cars/nbc.png",
-    wallpaper: "../assets/wallpapers/nbc-03.svg",
+    wallpaper: "../assets/wallpapers/nbc.png",
   },
-
   {
     name: "ATARA // 04",
     accent: "#4bbdff",
     label: "04",
     file: "../assets/cars/atasa.png",
-    wallpaper: "../assets/wallpapers/pulse-04.svg",
+    wallpaper: "../assets/wallpapers/atasa.png",
   },
   {
     name: "SAERA // 05",
     accent: "#ffd000",
     label: "05",
-    file: "../assets/cars/saa.png",
-    wallpaper: "../assets/wallpapers/torque-05.svg",
+    file: "../assets/cars/saaa.png",
+    wallpaper: "../assets/wallpapers/saaa.png",
   },
   {
     name: "EPCARA // 06",
     accent: "#00a651",
     label: "06",
     file: "../assets/cars/epcma.png",
-    wallpaper: "../assets/wallpapers/epcma-06.svg",
+    wallpaper: "../assets/wallpapers/epcma.png",
   },
 ];
 
-// =====================================================
-// CURRENTLY SELECTED CAR
-// =====================================================
-
-// This tells the carousel which car is currently selected.
-//
-// Arrays start counting from 0:
-//
-// 0 = APEX
-// 1 = VOLT
-// 2 = NBC
-// 3 = PULSE
-// 4 = TORQUE
-//
-// Therefore "2" means NBC is selected when the page opens.
-
 let selected = 2;
 
-// =====================================================
-// GET OUR HTML ELEMENTS
-// =====================================================
-
-// This is the container where JavaScript will put
-// all of the car cards.
-
 const carsContainer = document.getElementById("cars");
-
-// This is the container where JavaScript will create
-// the little navigation dots.
-
 const carouselDots = document.getElementById("carouselDots");
 
-// =====================================================
-// CREATE THE CARDS AND DOTS
-// =====================================================
+const carName = document.getElementById("carName");
+const modalCarArt = document.getElementById("modalCarArt");
+const modalWallpaper = document.getElementById("modalWallpaper");
+const carModal = document.getElementById("carModal");
 
-// Go through every car in the cars array.
+const prevCar = document.getElementById("prevCar");
+const nextCar = document.getElementById("nextCar");
+const wallpaperButton = document.getElementById("wallpaperButton");
+const modalClose = document.getElementById("modalClose");
 
 cars.forEach(function (car, index) {
-  // -----------------------------------------------
-  // CREATE THE CAR BUTTON
-  // -----------------------------------------------
-
-  // Create a button element for this car.
-
   const carElement = document.createElement("button");
 
-  // Make sure it behaves as a normal button.
-
   carElement.type = "button";
-
-  // Give it the CSS class used by our carousel.
-
   carElement.className = "car-card";
 
-  // -----------------------------------------------
-  // PUT THE CAR IMAGE INSIDE THE BUTTON
-  // -----------------------------------------------
-
   carElement.innerHTML = `
-    <img
-      src="${car.file}"
-      alt="${car.name}"
-    >
+    <img src="${car.file}" alt="${car.name}">
   `;
 
-  // -----------------------------------------------
-  // WHEN THE CAR IS CLICKED
-  // -----------------------------------------------
-
-  // Select this car and then open its information modal.
-
   carElement.onclick = function () {
-    select(index, true);
+    selectCar(index, false);
   };
 
-  // -----------------------------------------------
-  // ADD THE CAR TO THE PAGE
-  // -----------------------------------------------
-
   carsContainer.appendChild(carElement);
-
-  // =================================================
-  // CREATE THE NAVIGATION DOT
-  // =================================================
 
   const dot = document.createElement("button");
 
   dot.type = "button";
 
-  // When the dot is clicked,
-  // select the corresponding car.
-
   dot.onclick = function () {
-    select(index, true);
+    selectCar(index, false);
   };
-
-  // Add the dot to the dots container.
 
   carouselDots.appendChild(dot);
 });
 
-// =====================================================
-// WORK OUT WHERE A CAR IS RELATIVE TO THE SELECTED CAR
-// =====================================================
-
-// This function tells us where a particular car sits
-// compared to the currently selected car.
-//
-// Example:
-//
-// selected = 2
-//
-// Car 0 = far left
-// Car 1 = left
-// Car 2 = active
-// Car 3 = right
-// Car 4 = far right
-
+/**
+ * Gets the carousel position of a car relative to the selected car.
+ *
+ * @param {number} index - Car index.
+ * @returns {number} Relative carousel position.
+ */
 function getRelativePosition(index) {
   let distance = index - selected;
-
   const carCount = cars.length;
 
   if (distance > Math.floor(carCount / 2)) {
-    distance = distance - carCount;
+    distance -= carCount;
   }
 
   if (distance < -Math.floor(carCount / 2)) {
-    distance = distance + carCount;
+    distance += carCount;
   }
 
   return distance;
 }
 
-// =====================================================
-// RENDER THE CAROUSEL
-// =====================================================
-
-// This function updates the visual position
-// of every car.
-
+/**
+ * Updates the visual position of all cars.
+ */
 function renderCarousel() {
-  // Get every car card inside our container.
-
   const carElements = Array.from(carsContainer.children);
-
-  // Go through every car.
+  const dots = Array.from(carouselDots.children);
 
   carElements.forEach(function (carElement, index) {
-    // Start by removing all previous position classes.
-
     carElement.className = "car-card";
-
-    // Find out where this car should be positioned.
 
     const distance = getRelativePosition(index);
 
-    // -----------------------------------------------
-    // ACTIVE CAR
-    // -----------------------------------------------
-
     if (distance === 0) {
       carElement.classList.add("active");
-    }
-
-    // -----------------------------------------------
-    // CAR TO THE LEFT
-    // -----------------------------------------------
-    else if (distance === -1) {
+    } else if (distance === -1) {
       carElement.classList.add("left");
-    }
-
-    // -----------------------------------------------
-    // CAR TO THE RIGHT
-    // -----------------------------------------------
-    else if (distance === 1) {
+    } else if (distance === 1) {
       carElement.classList.add("right");
-    }
-
-    // -----------------------------------------------
-    // FAR LEFT CAR
-    // -----------------------------------------------
-    else if (distance === -2) {
+    } else if (distance === -2) {
       carElement.classList.add("far-left");
-    }
-
-    // -----------------------------------------------
-    // FAR RIGHT CAR
-    // -----------------------------------------------
-    else if (distance === 2) {
+    } else if (distance === 2) {
       carElement.classList.add("far-right");
-    }
-
-    // -----------------------------------------------
-    // ANYTHING ELSE
-    // -----------------------------------------------
-    else {
+    } else {
       carElement.classList.add("hidden");
     }
   });
 
-  // =================================================
-  // UPDATE THE NAVIGATION DOTS
-  // =================================================
-
-  const dots = Array.from(carouselDots.children);
-
   dots.forEach(function (dot, index) {
-    // Remove the active state first.
-
-    dot.classList.remove("active");
-
-    // If this dot belongs to the selected car,
-    // make it active.
-
-    if (index === selected) {
-      dot.classList.add("active");
-    }
+    dot.classList.toggle("active", index === selected);
   });
-
-  // =================================================
-  // UPDATE THE CAR INFORMATION
-  // =================================================
 
   const selectedCar = cars[selected];
 
-  // Put the selected car's name into the heading.
-
-  document.getElementById("carName").textContent = selectedCar.name;
-
-  // Put the selected car's description into the description.
-
-  document.getElementById("carDescription").textContent =
-    selectedCar.description;
+  carName.textContent = selectedCar.name;
 }
 
-// =====================================================
-// SELECT A CAR
-// =====================================================
-
-// This function changes which car is selected.
-//
-// index = which car we want
-//
-// openModal = whether we should open the car information
-//             modal after selecting it.
-
+/**
+ * Selects a car.
+ *
+ * @param {number} index - Car index.
+ * @param {boolean} openModal - Whether to open the modal.
+ */
 function selectCar(index, openModal) {
-  // Keep the carousel circular.
-  //
-  // If we go before 0, it wraps to the last car.
-  // If we go beyond the last car, it wraps to the first.
-
   selected = (index + cars.length) % cars.length;
 
-  // Update the visual carousel.
-
   renderCarousel();
-
-  // If we were told to open the modal,
-  // wait 180 milliseconds and then open it.
 
   if (openModal === true) {
     setTimeout(function () {
@@ -316,172 +160,94 @@ function selectCar(index, openModal) {
   }
 }
 
-// =====================================================
-// OPEN CAR MODAL
-// =====================================================
-
+/**
+ * Opens the selected car modal.
+ */
 function openCarModal() {
-  // Get the currently selected car.
-
   const selectedCar = cars[selected];
 
-  // Put the car image into the modal.
-
-  document.getElementById("modalCarArt").innerHTML = `
-    <img
-      src="${selectedCar.file}"
-      alt="${selectedCar.name}"
-    >
+  modalCarArt.innerHTML = `
+    <img src="${selectedCar.file}" alt="${selectedCar.name}">
   `;
 
-  // Put the car name into the modal.
+  carName.textContent = selectedCar.name;
 
-  document.getElementById("modalCarName").textContent = selectedCar.name;
+  modalWallpaper.dataset.file = selectedCar.wallpaper;
+  modalWallpaper.dataset.name = selectedCar.label;
 
-  // Put the description into the modal.
-
-  document.getElementById("modalCarDescription").textContent =
-    selectedCar.description;
-
-  // Store the wallpaper filename on the download button.
-
-  document.getElementById("modalWallpaper").dataset.file =
-    selectedCar.wallpaper;
-
-  // Store the short car name for the download filename.
-
-  document.getElementById("modalWallpaper").dataset.name = selectedCar.label;
-
-  // Show the modal.
-
-  document.getElementById("carModal").classList.add("open");
-
-  // Tell accessibility tools that the modal is now visible.
-
-  document.getElementById("carModal").setAttribute("aria-hidden", "false");
+  carModal.classList.add("open");
+  carModal.setAttribute("aria-hidden", "false");
 }
 
-// =====================================================
-// CLOSE CAR MODAL
-// =====================================================
-
+/**
+ * Closes the car modal.
+ */
 function closeCarModal() {
-  // Hide the modal.
-
-  document.getElementById("carModal").classList.remove("open");
-
-  // Tell accessibility tools that the modal is hidden.
-
-  document.getElementById("carModal").setAttribute("aria-hidden", "true");
+  carModal.classList.remove("open");
+  carModal.setAttribute("aria-hidden", "true");
 }
 
-// =====================================================
-// PREVIOUS CAR BUTTON
-// =====================================================
-
-// Clicking the left arrow moves one car backwards.
-
-document.getElementById("prevCar").onclick = function () {
+prevCar.onclick = function () {
   selectCar(selected - 1, false);
 };
 
-// =====================================================
-// NEXT CAR BUTTON
-// =====================================================
-
-// Clicking the right arrow moves one car forwards.
-
-document.getElementById("nextCar").onclick = function () {
+nextCar.onclick = function () {
   selectCar(selected + 1, false);
 };
 
-// =====================================================
-// VIEW WALLPAPER BUTTON
-// =====================================================
+wallpaperButton.onclick = function () {
+  const selectedCar = cars[selected];
 
-// Clicking "VIEW WALLPAPER" opens the modal.
+  const downloadLink = document.createElement("a");
 
-document.getElementById("wallpaperButton").onclick = function () {
-  openCarModal();
+  downloadLink.href = selectedCar.wallpaper;
+  downloadLink.download = `NBC-AGM-2026-${selectedCar.label}.png`;
+
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  downloadLink.remove();
 };
 
-// =====================================================
-// CLOSE BUTTON
-// =====================================================
-
-document.getElementById("modalClose").onclick = function () {
+modalClose.onclick = function () {
   closeCarModal();
 };
-
-// =====================================================
-// CLICK BACKDROP TO CLOSE
-// =====================================================
 
 document.querySelector("[data-close-modal]").onclick = function () {
   closeCarModal();
 };
 
-// =====================================================
-// DOWNLOAD WALLPAPER
-// =====================================================
-
-document.getElementById("modalWallpaper").onclick = function () {
-  // Create a temporary link.
+/**
+ * Downloads the selected car's finished wallpaper.
+ */
+modalWallpaper.onclick = function () {
+  const wallpaperFile = modalWallpaper.dataset.file;
+  const carLabel = modalWallpaper.dataset.name;
 
   const downloadLink = document.createElement("a");
 
-  // Get the wallpaper path stored earlier.
+  downloadLink.href = wallpaperFile;
+  downloadLink.download = `NBC-AGM-2026-${carLabel}.png`;
 
-  downloadLink.href = document.getElementById("modalWallpaper").dataset.file;
-
-  // Create the filename for the downloaded wallpaper.
-
-  downloadLink.download =
-    "NBC-AGM-2026-" +
-    document.getElementById("modalWallpaper").dataset.name +
-    ".svg";
-
-  // Trigger the download.
-
+  document.body.appendChild(downloadLink);
   downloadLink.click();
+  downloadLink.remove();
 };
 
-// =====================================================
-// KEYBOARD CONTROLS
-// =====================================================
-
 document.onkeydown = function (event) {
-  // Escape closes the modal.
-
   if (event.key === "Escape") {
     closeCarModal();
   }
 
-  // Left arrow moves to the previous car.
-
   if (event.key === "ArrowLeft") {
     selectCar(selected - 1, false);
   }
-
-  // Right arrow moves to the next car.
 
   if (event.key === "ArrowRight") {
     selectCar(selected + 1, false);
   }
 };
 
-// =====================================================
-// INITIAL RENDER
-// =====================================================
-
-// Run this once when the page loads
-// so the carousel starts in the correct position.
-
 renderCarousel();
-
-// =====================================================
-// AUTO CAROUSEL
-// =====================================================
 
 let autoSlideTimer;
 let carouselPaused = false;

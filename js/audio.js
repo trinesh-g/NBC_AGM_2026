@@ -1,9 +1,10 @@
 export function playAudio(audioElement, volume) {
   audioElement.volume = volume;
+  audioElement.currentTime = 0;
 
   const playPromise = audioElement.play();
 
-  if (playPromise) {
+  if (playPromise !== undefined) {
     playPromise.catch(() => {});
   }
 }

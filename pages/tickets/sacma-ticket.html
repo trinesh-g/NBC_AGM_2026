@@ -15,18 +15,16 @@
       rel="stylesheet"
     />
 
-    <!-- Base ticket -->
+    <!-- Shared ticket styling -->
     <link rel="stylesheet" href="../../css/grid-pass.css" />
 
-    <!-- SACMA-specific styling -->
+    <!-- SACMA ticket styling -->
     <link rel="stylesheet" href="../../css/sacma-ticket.css" />
   </head>
 
   <body class="ticket-page ticket-page-sacma">
     <main class="pass-page">
-      <!-- ========================================
-           NAVIGATION
-      ======================================== -->
+      <!-- Navigation -->
 
       <nav class="pass-nav">
         <a href="../grid.html" class="back-link"> ← BACK TO GRID </a>
@@ -36,14 +34,12 @@
         </button>
       </nav>
 
-      <!-- ========================================
-           TICKET
-      ======================================== -->
+      <!-- SACMA GRID PASS -->
 
       <section class="ticket ticket-sacma" id="gridPass">
         <div class="ticket-top-line"></div>
 
-        <!-- HEADER -->
+        <!-- Header -->
 
         <header class="ticket-header">
           <div class="ticket-branding">
@@ -61,7 +57,7 @@
 
         <div class="ticket-divider"></div>
 
-        <!-- ATTENDEE -->
+        <!-- Attendee -->
 
         <section class="ticket-main">
           <div class="attendee">
@@ -76,60 +72,26 @@
             <span class="attendance" id="attendance"> ATTENDING </span>
           </div>
 
-          <!-- DRIVER PROFILE -->
+          <!-- QR Code -->
 
-          <div class="profile">
-            <div class="profile-image">
-              <div class="profile-ring"></div>
+          <div class="qr-section">
+            <div
+              class="qr-code"
+              id="qrCode"
+              aria-label="Grid Pass verification QR code"
+            ></div>
 
-              <div class="helmet"></div>
-
-              <div class="visor"></div>
-            </div>
-
-            <span> DRIVER PROFILE </span>
+            <span> SCAN TO VERIFY </span>
           </div>
         </section>
 
-        <!-- ========================================
-             CAR
-        ======================================== -->
+        <!-- Racing identity -->
 
-        <section class="car-zone">
-          <div class="car-glow"></div>
-
-          <div class="speed-line speed-line-one"></div>
-
-          <div class="speed-line speed-line-two"></div>
-
-          <div class="car">
-            <div class="wheel wheel-left"></div>
-
-            <div class="wheel wheel-right"></div>
-
-            <div class="front-wing"></div>
-
-            <div class="nose"></div>
-
-            <div class="cockpit"></div>
-
-            <div class="body"></div>
-
-            <div class="sidepod sidepod-left"></div>
-
-            <div class="sidepod sidepod-right"></div>
-
-            <div class="rear-wing"></div>
-          </div>
-
-          <div class="car-label">SACMA // RACING MACHINE</div>
-        </section>
+        <div class="car-label">SIGMA // 01</div>
 
         <div class="ticket-divider"></div>
 
-        <!-- ========================================
-             EVENT INFORMATION
-        ======================================== -->
+        <!-- Event details -->
 
         <section class="event-details">
           <div class="event-detail">
@@ -157,19 +119,21 @@
           </div>
         </section>
 
-        <!-- ========================================
-             FOOTER
-        ======================================== -->
+        <!-- Footer -->
 
         <footer class="ticket-footer">
           <span> #NBCAGM2026 // ACCELERATING INTO THE FUTURE </span>
 
-          <strong> GRID ENTRY </strong>
+          <strong> SIGMA // GRID ENTRY </strong>
         </footer>
 
         <div class="ticket-bottom-line"></div>
       </section>
     </main>
+
+    <!-- Shared ticket population + QR generation -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
     <script src="../../js/grid-pass.js"></script>
   </body>

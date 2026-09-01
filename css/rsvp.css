@@ -83,7 +83,7 @@ nav {
 
   width: 100%;
 
-  padding: 28px 40px;
+  padding: 0px 40px;
 
   font-size: 9px;
   font-weight: 600;
@@ -93,13 +93,12 @@ nav {
 .brand {
   display: flex;
   align-items: center;
+
+  gap: 12px;
 }
 
 .brand img {
-  display: block;
-
-  width: 180px;
-  height: auto;
+  width: 450px;
 }
 
 .back-link {
@@ -120,7 +119,7 @@ nav {
 
   margin: 4vh auto 0;
 
-  padding: 42px;
+  padding: 24px;
 
   background: linear-gradient(
     145deg,

@@ -16,5 +16,5 @@ playAudio(mainLoadSound, 0.1);
 fadeAudio(mainLoadSound, 0.9, 2500);
 
 setTimeout(() => {
-  //playAudio(mainMusic, 0.9);
+  playAudio(mainMusic, 0.9);
 }, 2500);

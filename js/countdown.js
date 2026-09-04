@@ -1,9 +1,4 @@
-/**
- * NBC AGM 2026 Countdown Sequence
- *
- * Controls the starting-light countdown, "LIGHTS OUT" animation,
- * screen wipe, and transition to the AGM experience.
- */
+import { playAudio } from "./audio.js";
 
 const startSequence = document.getElementById("startSequence");
 const lights = document.querySelectorAll(".lights i");
@@ -11,6 +6,9 @@ const number = document.getElementById("number");
 const status = document.getElementById("status");
 const lightsOut = document.getElementById("lightsOut");
 const wipe = document.getElementById("wipe");
+const countdownAudio = document.getElementById("countdownAudio");
+
+playAudio(countdownAudio, 0.2);
 
 const countdownSteps = [
   {

@@ -1,3 +1,5 @@
+import { playAudio } from "./audio.js";
+
 const cars = [
   {
     name: "SIGMA // 01",
@@ -57,6 +59,7 @@ const prevCar = document.getElementById("prevCar");
 const nextCar = document.getElementById("nextCar");
 const wallpaperButton = document.getElementById("wallpaperButton");
 const modalClose = document.getElementById("modalClose");
+const buttonClickSound = document.getElementById("buttonClickSound");
 
 cars.forEach(function (car, index) {
   const carElement = document.createElement("button");
@@ -188,14 +191,17 @@ function closeCarModal() {
 }
 
 prevCar.onclick = function () {
+  playAudio(buttonClickSound, 0.9);
   selectCar(selected - 1, false);
 };
 
 nextCar.onclick = function () {
+  playAudio(buttonClickSound, 0.9);
   selectCar(selected + 1, false);
 };
 
 wallpaperButton.onclick = function () {
+  playAudio(buttonClickSound, 0.9);
   const selectedCar = cars[selected];
 
   const downloadLink = document.createElement("a");

@@ -1,8 +1,13 @@
+import { playAudio } from "./audio.js";
+
 const rsvpForm = document.getElementById("rsvpForm");
 const formContent = document.getElementById("formContent");
 const success = document.getElementById("success");
 const viewGridPass = document.getElementById("viewGridPass");
 const backToForm = document.getElementById("backToForm");
+const mainMusic = document.getElementById("mainMusic");
+
+playAudio(mainMusic, 0.8);
 
 // Employer Body → Ticket Page
 const ticketTemplates = {

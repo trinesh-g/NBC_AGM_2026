@@ -191,17 +191,17 @@ function closeCarModal() {
 }
 
 prevCar.onclick = function () {
-  playAudio(buttonClickSound, 0.9);
+  playAudio(buttonClickSound, 0.2);
   selectCar(selected - 1, false);
 };
 
 nextCar.onclick = function () {
-  playAudio(buttonClickSound, 0.9);
+  playAudio(buttonClickSound, 0.2);
   selectCar(selected + 1, false);
 };
 
 wallpaperButton.onclick = function () {
-  playAudio(buttonClickSound, 0.9);
+  playAudio(buttonClickSound, 0.2);
   const selectedCar = cars[selected];
 
   const downloadLink = document.createElement("a");

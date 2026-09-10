@@ -232,6 +232,7 @@ a {
   padding-top: 55px;
   padding-bottom: 50px;
 }
+
 .event-kicker {
   color: #aeb5be;
 
@@ -797,8 +798,6 @@ a {
   text-align: center;
 
   padding: 20px 20px 20px;
-
-  background: linear-gradient(180deg, #080b10 0%, #06090e 100%);
 
   border-top: 1px solid var(--line);
 }

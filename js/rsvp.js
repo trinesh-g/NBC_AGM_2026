@@ -7,7 +7,7 @@ const viewGridPass = document.getElementById("viewGridPass");
 const backToForm = document.getElementById("backToForm");
 const mainMusic = document.getElementById("mainMusic");
 
-playAudio(mainMusic, 0.8);
+playAudio(mainMusic, 0.2);
 
 // Employer Body → Ticket Page
 const ticketTemplates = {
